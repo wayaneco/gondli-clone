@@ -18,6 +18,20 @@ const config = {
       },
     },
     extend: {
+      spacing: {
+        '18.5': '4.625rem',
+        '25': '6.25rem',
+        '13': '3.25rem',
+        '4.5': '1.125rem',
+        '3.75': '0.938rem',
+      },
+      colors: {
+        'surface-brand': '#0C343D',
+      },
+      backgroundImage: {
+        'button-default':
+          'linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%)',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

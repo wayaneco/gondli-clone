@@ -1,5 +1,7 @@
 {
-  "HomePage": {
-    "title": "Hello world!"
-  }
+  "explore": "Explore",
+  "features": "Features",
+  "solutions": "Solutions",
+  "testimonials": "Testimonials",
+  "join-waitlist": "Join Waitlist"
 }
