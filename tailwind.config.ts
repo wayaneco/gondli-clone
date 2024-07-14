@@ -20,17 +20,21 @@ const config = {
     extend: {
       spacing: {
         '150': '37.5rem',
+        '86.25': '21.563rem',
         '57.5': '14.375rem',
         '39.25': '9.798rem',
         '25': '6.25rem',
         '18.5': '4.625rem',
         '16.75': '4.188rem',
+        '15': '3.75rem',
         '13': '3.25rem',
+        '12.25': '3.063rem',
         '4.5': '1.125rem',
         '3.75': '0.938rem',
       },
       colors: {
         'surface-brand': '#0C343D',
+        input: '#c3c3c34d',
       },
       fontSize: {
         '2.25xl': '1.625rem',
@@ -40,6 +44,9 @@ const config = {
         'button-default':
           'linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%);',
         hero: 'linear-gradient(180deg, #0C343D 0%, rgba(12, 52, 61, 0.97) 17.54%, rgba(12, 52, 61, 0.8) 49.91%, rgba(12, 52, 61, 0.5) 75.23%, rgba(12, 52, 61, 0.466667) 100%);',
+      },
+      backdropBlur: {
+        '2.5xl': '58px',
       },
       padding: {
         inherit: 'inherit',

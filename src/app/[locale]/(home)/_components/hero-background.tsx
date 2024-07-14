@@ -20,7 +20,7 @@ export default async function HeroBackground() {
       <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero' />
       {columns.map((paths, index) => (
         <div
-          className='min-w-39.25 h-full flex-1 shrink-0 overflow-hidden sm:min-w-57.5'
+          className='h-full min-w-39.25 flex-1 shrink-0 overflow-hidden sm:min-w-57.5'
           key={index}
         >
           {[...new Array(COLUMNS.repeat)].map((_, i) => (
