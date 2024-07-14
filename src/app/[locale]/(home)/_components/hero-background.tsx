@@ -2,28 +2,28 @@ import Image from 'next/image';
 import { glob } from 'glob';
 import { cn } from '@/lib/utils';
 
-const HERO_COLUMNS = 5;
+const COLUMNS = {
+  length: 5,
+  repeat: 3,
+};
 
 export default async function HeroBackground() {
-  const heroDirectory = await glob('public/images/hero/*.{png,jpg,jpeg}');
-  const heroColumns: string[][] = Array.from(
-    { length: HERO_COLUMNS },
-    () => [],
-  );
+  const images = await glob('public/images/hero/*.{png,jpg,jpeg}');
+  const columns: string[][] = Array.from({ length: COLUMNS.length }, () => []);
 
-  heroDirectory.forEach((filename, index) => {
-    heroColumns[index % HERO_COLUMNS].push(filename.replace('public', ''));
+  images.forEach((filename, index) => {
+    columns[index % COLUMNS.length].push(filename.replace('public', ''));
   });
 
   return (
-    <div className='p-inherit absolute left-0 top-0 -z-10 flex h-full w-full justify-center gap-6 overflow-hidden bg-surface-brand'>
+    <div className='absolute left-0 top-0 -z-10 flex h-full w-full justify-center gap-6 overflow-hidden bg-surface-brand p-inherit'>
       <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero' />
-      {heroColumns.map((paths, index) => (
+      {columns.map((paths, index) => (
         <div
-          className='h-full min-w-57.5 flex-1 shrink-0 overflow-hidden'
+          className='min-w-39.25 h-full flex-1 shrink-0 overflow-hidden sm:min-w-57.5'
           key={index}
         >
-          {[...new Array(2)].map((_, i) => (
+          {[...new Array(COLUMNS.repeat)].map((_, i) => (
             <div
               className={cn(
                 'flex flex-col',

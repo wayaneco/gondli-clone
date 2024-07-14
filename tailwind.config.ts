@@ -19,7 +19,9 @@ const config = {
     },
     extend: {
       spacing: {
+        '150': '37.5rem',
         '57.5': '14.375rem',
+        '39.25': '9.798rem',
         '25': '6.25rem',
         '18.5': '4.625rem',
         '16.75': '4.188rem',
@@ -29,6 +31,10 @@ const config = {
       },
       colors: {
         'surface-brand': '#0C343D',
+      },
+      fontSize: {
+        '2.25xl': '1.625rem',
+        '4.25xl': '2.5rem',
       },
       backgroundImage: {
         'button-default':
