@@ -19,12 +19,15 @@ const config = {
     },
     extend: {
       spacing: {
+        '162.5': '40.625rem',
         '150': '37.5rem',
+        '112.5': '28.125rem',
         '86.25': '21.563rem',
         '57.5': '14.375rem',
         '39.25': '9.798rem',
         '25': '6.25rem',
         '18.5': '4.625rem',
+        '17.25': '4.3125rem',
         '16.75': '4.188rem',
         '15': '3.75rem',
         '13': '3.25rem',
@@ -33,7 +36,9 @@ const config = {
         '3.75': '0.938rem',
       },
       colors: {
+        'surface-primary': '#F5F9FF',
         'surface-brand': '#0C343D',
+        'border-primary': '#DBECF0',
         input: '#c3c3c34d',
       },
       fontSize: {
