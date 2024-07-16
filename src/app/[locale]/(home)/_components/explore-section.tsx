@@ -30,7 +30,7 @@ export default function ExploreSection() {
   return (
     <div
       id='explore'
-      className='flex justify-center gap-10 bg-surface-primary px-3.5 py-15 sm:items-center sm:justify-between sm:px-25 sm:py-32'
+      className='sm:py-30 flex justify-center gap-10 bg-surface-primary px-3.5 py-15 sm:items-center sm:justify-between sm:px-25'
     >
       <div className='flex w-86.25 flex-col justify-center gap-10 sm:w-162.5 sm:gap-17.25'>
         <div className='space-y-8 text-center sm:space-y-10 sm:text-start'>
@@ -42,7 +42,7 @@ export default function ExploreSection() {
             alt='explore'
             width={345}
             height={345}
-            className='mx-auto h-86.25 w-full rounded-3xl sm:mx-0 lg:hidden'
+            className='mx-auto rounded-3xl sm:mx-0 lg:hidden'
           />
           <p className='sm:text-xl'>{t('explore-description')}</p>
         </div>
