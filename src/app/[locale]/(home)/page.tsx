@@ -1,11 +1,11 @@
-import HeroSection from './_components/hero-section';
-import ExploreSection from './_components/explore-section';
-import FeaturesSection from './_components/features-section';
+import Hero from './_components/hero';
+import ExploreSection from './_components/sections/explore';
+import FeaturesSection from './_components/sections/features';
 
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <Hero />
       <ExploreSection />
       <FeaturesSection />
     </main>

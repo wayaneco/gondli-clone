@@ -17,7 +17,7 @@ export default async function HeroBackground() {
 
   return (
     <div className='absolute left-0 top-0 -z-10 flex h-full w-full justify-center gap-6 overflow-hidden bg-surface-brand p-inherit'>
-      <div className='bg-hero-gradient absolute left-0 top-0 z-10 h-full w-full space-y-6' />
+      <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero-gradient' />
       {columns.map((paths, index) => (
         <div
           className='h-full min-w-39.25 flex-1 shrink-0 overflow-hidden sm:min-w-57.5'

@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
-import HeroBackground from './hero-background';
-import JoinWaitlist from './join-waitlist';
+import HeroBackground from './background';
+import JoinWaitlist from '../join-waitlist';
 
-export default function HeroSection() {
+export default function Hero() {
   const t = useTranslations();
 
   return (
