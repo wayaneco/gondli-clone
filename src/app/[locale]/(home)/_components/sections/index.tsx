@@ -19,7 +19,7 @@ export function SectionWrapper({
   );
 }
 
-export function SectionHeader({
+export function SectionTitle({
   children,
   ...props
 }: SectionProps<HTMLHeadElement>) {

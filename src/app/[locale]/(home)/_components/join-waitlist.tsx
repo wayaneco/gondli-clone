@@ -7,7 +7,7 @@ export default function JoinWaitlist() {
   const t = useTranslations();
 
   return (
-    <form className='w-86.25 sm:w-150'>
+    <form className='w-full max-w-150'>
       <Input
         type='email'
         required

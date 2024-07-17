@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className='fixed top-0 z-10 flex h-16.75 w-full items-center justify-between bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
       <Image
-        src='/images/logo.svg'
+        src={'/images/logo.svg'}
         alt='logo'
         priority
         width={101}
@@ -50,7 +50,7 @@ export default function Header() {
         </Link>
         <button type='button' className='lg:hidden'>
           <Image
-            src='/images/icons/menu.svg'
+            src={'/images/icons/menu.svg'}
             alt='menu'
             height={24}
             width={24}

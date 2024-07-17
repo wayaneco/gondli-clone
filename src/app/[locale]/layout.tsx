@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import Header from '@/components/shared/header';
+import { cn } from '@/lib/utils';
 import '../globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -24,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className='scroll-smooth'>
-      <body className={inter.className}>
+      <body className={cn('bg-surface-primary', inter.className)}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}

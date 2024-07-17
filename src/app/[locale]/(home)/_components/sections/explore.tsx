@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
-import { SectionWrapper, SectionHeader, SectionDescription } from './';
+import { SectionWrapper, SectionTitle, SectionDescription } from '.';
 
 export default function ExploreSection() {
   const t = useTranslations();
@@ -31,13 +31,13 @@ export default function ExploreSection() {
   return (
     <SectionWrapper
       id='explore'
-      className='flex justify-center gap-10 bg-surface-primary sm:items-center sm:justify-between'
+      className='flex justify-center gap-10 sm:items-center sm:justify-between'
     >
-      <div className='flex w-86.25 flex-col justify-center gap-10 sm:w-162.5 sm:gap-17.25'>
+      <div className='flex w-full flex-col justify-center gap-10 sm:max-w-162.5 sm:gap-17.25'>
         <div className='space-y-8 text-center sm:space-y-10 sm:text-start'>
-          <SectionHeader>{t('explore-title')}</SectionHeader>
+          <SectionTitle>{t('explore-title')}</SectionTitle>
           <Image
-            src='/images/explore/mobile.png'
+            src={'/images/explore/mobile.png'}
             alt='explore'
             width={345}
             height={345}
@@ -52,7 +52,7 @@ export default function ExploreSection() {
         </div>
       </div>
       <Image
-        src='/images/explore/index.png'
+        src={'/images/explore/index.png'}
         alt='explore'
         width={450}
         height={650}
