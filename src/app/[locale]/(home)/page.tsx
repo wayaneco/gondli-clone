@@ -3,6 +3,7 @@ import ExploreSection from './_components/sections/explore';
 import FeaturesSection from './_components/sections/features';
 import SolutionsSection from './_components/sections/solutions';
 import TestimonialsSection from './_components/sections/testimonials';
+import WaitlistSection from './_components/sections/waitlist';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <FeaturesSection />
       <SolutionsSection />
       <TestimonialsSection />
+      <WaitlistSection />
     </main>
   );
 }
