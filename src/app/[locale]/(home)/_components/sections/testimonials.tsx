@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
                     <p className='text-sm font-medium sm:text-xl'>
                       {author.name}
                     </p>
-                    <p className='text-sm font-light text-gondli-user sm:text-base'>
+                    <p className='text-situational-secondary text-sm font-light sm:text-base'>
                       {t('gondli-user')}
                     </p>
                   </div>

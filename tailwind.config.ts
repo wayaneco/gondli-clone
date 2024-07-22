@@ -20,8 +20,10 @@ const config = {
     extend: {
       spacing: {
         '310': '77.5rem',
+        '258': '64.5rem',
         '212.5': '53.125rem',
         '184.5': '46.125rem',
+        '172': '43rem',
         '162.5': '40.625rem',
         '150': '37.5rem',
         '112.5': '28.125rem',
@@ -47,6 +49,8 @@ const config = {
       colors: {
         'surface-primary': '#F5F9FF',
         'surface-brand': '#0C343D',
+        'situational-primary': '#124C59',
+        'situational-secondary': '#A9E2EF',
         'border-primary': '#DBECF0',
         'border-feature': '#4B6F77',
         'button-disabled': '#155B6B',
@@ -55,7 +59,6 @@ const config = {
         input: 'rgba(195, 195, 195, 0.3)',
         'input-solid': 'rgba(236, 240, 245, 1)',
         feature: '#3A626B',
-        'gondli-user': '#A9E2EF',
       },
       fontSize: {
         '2.25xl': '1.625rem',

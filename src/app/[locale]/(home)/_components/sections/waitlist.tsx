@@ -21,7 +21,7 @@ export default function WaitlistSection() {
           alt='waitlist'
           width={1440}
           height={1070}
-          className='h-auto w-full'
+          className='max-h-172 2xl:max-h-258 w-full object-cover object-top'
         />
         <div className='h-35.5 absolute bottom-0 left-0 w-full bg-gradient-to-t from-white' />
       </div>
