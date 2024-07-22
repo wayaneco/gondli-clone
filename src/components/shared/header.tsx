@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { Menu } from '@/icons';
 import { Button } from '@/components/ui/button';
 
 export default function Header() {
@@ -26,7 +27,7 @@ export default function Header() {
   ];
 
   return (
-    <header className='fixed top-0 z-10 flex h-16.75 w-full items-center justify-between bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
+    <header className='fixed top-0 z-20 flex h-16.75 w-full items-center justify-between bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
       <Image
         src={'/images/logo.svg'}
         alt='logo'
@@ -48,13 +49,8 @@ export default function Header() {
         <Link href='#waitlist'>
           <Button>{t('join-waitlist')}</Button>
         </Link>
-        <button type='button' className='lg:hidden'>
-          <Image
-            src={'/images/icons/menu.svg'}
-            alt='menu'
-            height={24}
-            width={24}
-          />
+        <button type='button' className='text-white lg:hidden'>
+          <Menu />
         </button>
       </div>
     </header>
