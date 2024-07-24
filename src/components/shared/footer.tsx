@@ -107,7 +107,7 @@ export default function Footer() {
           </ul>
         ))}
       </nav>
-      <div className='bg-situational-primary mt-10 h-px w-full sm:mt-8' />
+      <div className='mt-10 h-px w-full bg-situational-primary sm:mt-8' />
       <div className='flex w-full items-center justify-between pt-5 sm:pt-8'>
         <div className='flex items-center gap-1.5'>
           <Globe />
