@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className='fixed top-0 z-20 flex h-16.75 w-full items-center justify-between bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
       <Image
-        src={'/images/logo.svg'}
+        src={'/images/logo/index.svg'}
         alt='logo'
         priority
         width={101}

@@ -11,8 +11,7 @@ const inputVariants = cva(
       variant: {
         default:
           'bg-input text-white backdrop-blur-2.5xl placeholder:text-white',
-        solid:
-          'bg-input-solid text-text-secondary placeholder:text-text-secondary',
+        solid: 'bg-input-solid text-black placeholder:text-text-secondary',
       },
     },
     defaultVariants: {

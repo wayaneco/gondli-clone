@@ -4,8 +4,8 @@ import * as React from 'react';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from '@/icons';
 
+import { ChevronLeft, ChevronRight } from '@/icons';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 

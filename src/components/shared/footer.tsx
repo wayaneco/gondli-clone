@@ -50,7 +50,7 @@ export default function Footer() {
       ],
     },
     {
-      title: t('Find us on'),
+      title: t('find-us-on'),
       links: [
         {
           label: 'Facebook',
@@ -88,7 +88,7 @@ export default function Footer() {
   return (
     <footer className='flex w-full flex-col bg-surface-brand px-3.75 py-8 text-sm text-white sm:text-base lg:px-25'>
       <Image
-        src={'/images/logo.svg'}
+        src={'/images/logo/index.svg'}
         alt='logo'
         priority
         width={82}
@@ -98,7 +98,7 @@ export default function Footer() {
       <nav className='grid grid-cols-2 gap-y-11 pt-10 sm:grid-cols-4 sm:gap-x-5 sm:pt-0'>
         {navigation.map(({ title, links }) => (
           <ul key={title} className='space-y-3'>
-            <h4 className='text-situational-secondary'>{title}</h4>
+            <h3 className='text-situational-secondary'>{title}</h3>
             {links.map(({ label, href }) => (
               <li key={label}>
                 <Link href={href}>{label}</Link>
@@ -114,7 +114,7 @@ export default function Footer() {
           <p>{t('switzerland')}</p>
         </div>
         <Image
-          src={'/images/logo.svg'}
+          src={'/images/logo/index.svg'}
           alt='logo'
           priority
           width={102}

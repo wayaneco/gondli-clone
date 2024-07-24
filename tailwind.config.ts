@@ -25,7 +25,9 @@ const config = {
         '184.5': '46.125rem',
         '172': '43rem',
         '162.5': '40.625rem',
+        '157.75': '39.4375rem',
         '150': '37.5rem',
+        '125': '31.25rem',
         '112.5': '28.125rem',
         '86.25': '21.563rem',
         '57.5': '14.375rem',
@@ -45,6 +47,7 @@ const config = {
         '4.5': '1.125rem',
         '3.75': '0.938rem',
         '1.75': '0.4375rem',
+        'px.5': '1.5px',
       },
       colors: {
         'surface-primary': '#F5F9FF',
@@ -59,9 +62,11 @@ const config = {
         input: 'rgba(195, 195, 195, 0.3)',
         'input-solid': 'rgba(236, 240, 245, 1)',
         feature: '#3A626B',
+        'dialog-background': '#000B1980',
       },
       fontSize: {
         '2.25xl': '1.625rem',
+        '2.5xl': '1.75rem',
         '4.25xl': '2.5rem',
       },
       backgroundImage: {
@@ -77,6 +82,13 @@ const config = {
       },
       padding: {
         inherit: 'inherit',
+      },
+      borderWidth: {
+        '1.5': '1.5px',
+      },
+      borderRadius: {
+        '1.5sm': '0.25rem',
+        '1.5lg': '0.625rem',
       },
       keyframes: {
         'accordion-down': {
