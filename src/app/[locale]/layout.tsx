@@ -6,8 +6,11 @@ import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import '../globals.css';
+import ComingSoon from '@/components/shared/coming-soon';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const isComingSoon = process.env.NEXT_PUBLIC_APP_MODE === 'coming-soon';
 
 export const metadata: Metadata = {
   title: 'Gondli - Easiest Way of Booking Wellness Services',
@@ -28,9 +31,15 @@ export default async function RootLayout({
     <html lang={locale} className='scroll-smooth'>
       <body className={cn('bg-surface-primary', inter.className)}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
-          <Footer />
+          {isComingSoon ? (
+            <ComingSoon />
+          ) : (
+            <>
+              <Header />
+              {children}
+              <Footer />
+            </>
+          )}
         </NextIntlClientProvider>
       </body>
     </html>

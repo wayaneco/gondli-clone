@@ -70,6 +70,7 @@ const config = {
         '4.25xl': '2.5rem',
       },
       backgroundImage: {
+        'coming-soon': "url('/images/coming-soon.png')",
         'button-default':
           'linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%);',
         'hero-gradient':
