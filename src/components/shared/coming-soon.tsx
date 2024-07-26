@@ -5,7 +5,7 @@ export default function ComingSoon() {
   const t = useTranslations();
 
   return (
-    <div className='bg-coming-soon flex h-screen w-full flex-col items-center justify-between bg-cover bg-center py-12 text-white'>
+    <div className='flex h-screen w-full flex-col items-center justify-between bg-coming-soon bg-cover bg-center py-12 text-white'>
       <span />
       <div className='flex translate-y-10 flex-col gap-3 text-center sm:gap-4'>
         <h1 className='text-4xl font-black sm:text-7xl'>
