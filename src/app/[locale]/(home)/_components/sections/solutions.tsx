@@ -16,7 +16,7 @@ export default function SolutionsSection() {
 
   return (
     <SectionWrapper id='solutions' className='space-y-10 sm:space-y-20'>
-      <div className='space-y-6 text-center sm:space-y-8'>
+      <div className='space-y-8 text-center sm:space-y-6'>
         <SectionTitle>{t('solutions-title')}</SectionTitle>
         <SectionDescription>{t('solutions-description')}</SectionDescription>
       </div>
