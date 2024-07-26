@@ -36,13 +36,14 @@ export default function TestimonialsSection() {
             <CarouselItem key={id}>
               <div className='mx-auto flex max-w-184.5 flex-col items-center gap-25 sm:gap-27.25'>
                 <SectionDescription>{testimonial}</SectionDescription>
-                <div className='flex gap-3.5'>
+                <div className='flex items-center gap-3.5'>
                   <Image
                     src={author.image}
                     alt={author.name}
-                    width={48}
-                    height={48}
-                    className='max-h-10 max-w-10 rounded-full sm:max-h-none sm:max-w-none'
+                    width={96}
+                    height={96}
+                    quality={100}
+                    className='h-10 w-10 rounded-full sm:h-12 sm:w-12'
                   />
                   <div className='flex h-full flex-col justify-between text-left'>
                     <p className='text-sm font-medium sm:text-xl'>

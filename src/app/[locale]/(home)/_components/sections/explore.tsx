@@ -41,6 +41,7 @@ export default function ExploreSection() {
             alt='explore'
             width={345}
             height={345}
+            quality={100}
             className='mx-auto rounded-3xl sm:mx-0 lg:hidden'
           />
           <SectionDescription>{t('explore-description')}</SectionDescription>
@@ -56,6 +57,7 @@ export default function ExploreSection() {
         alt='explore'
         width={450}
         height={650}
+        quality={100}
         className='hidden rounded-3xl lg:block'
       />
     </SectionWrapper>

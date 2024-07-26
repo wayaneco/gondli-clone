@@ -36,8 +36,9 @@ export default async function HeroBackground() {
                 <Image
                   src={path}
                   alt='hero'
-                  width={230}
-                  height={330}
+                  width={460}
+                  height={660}
+                  quality={100}
                   className='h-auto w-full rounded-2xl pb-6'
                   key={path}
                 />

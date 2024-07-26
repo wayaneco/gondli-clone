@@ -20,38 +20,49 @@ function SectionMountains({
     <Image
       src='/images/shapes/mountains.png'
       alt='mountains'
-      width={647.54}
-      height={256.99}
-      className={cn(
-        'pointer-events-none absolute max-w-56 sm:max-w-none',
-        className,
-      )}
+      width={647}
+      height={256}
+      quality={100}
+      className={cn('absolute max-w-56 sm:max-w-none', className)}
     />
   );
 }
 
 export function SectionWrapper({
   children,
-  className,
   displayMountains,
   ...props
 }: SectionProps<HTMLDivElement>) {
+  const [bgClasses, className] = (props.className || '')
+    .split(' ')
+    .reduce<[string[], string[]]>(
+      (acc, cls) => {
+        cls.startsWith('bg-') ? acc[0].push(cls) : acc[1].push(cls);
+        return acc;
+      },
+      [[], []],
+    );
+
   return (
     <div
       {...props}
-      className={cn(
-        'relative overflow-hidden px-3.5 py-15 sm:py-30 lg:px-25',
-        className,
-      )}
+      className={cn('relative h-full w-full overflow-hidden', bgClasses)}
     >
       <SectionMountains
         show={displayMountains}
-        className='-left-12 top-0 rotate-180 sm:-left-32 sm:-top-12'
+        className='left-0 top-0 rotate-180 sm:-top-12'
       />
-      {children}
+      <div
+        className={cn(
+          'relative z-10 px-3.5 py-15 sm:py-30 lg:px-25',
+          className,
+        )}
+      >
+        {children}
+      </div>
       <SectionMountains
         show={displayMountains}
-        className='-right-12 bottom-0 sm:-bottom-12 sm:-right-32'
+        className='bottom-0 right-0 sm:-bottom-12'
       />
     </div>
   );

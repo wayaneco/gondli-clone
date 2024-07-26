@@ -33,6 +33,7 @@ export default function FeaturesSection() {
                 alt='feature'
                 width={477}
                 height={393}
+                quality={100}
                 className='mx-auto'
               />
             </div>

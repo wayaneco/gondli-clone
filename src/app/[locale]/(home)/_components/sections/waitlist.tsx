@@ -19,8 +19,9 @@ export default function WaitlistSection() {
         <Image
           src={'/images/waitlist.png'}
           alt='waitlist'
-          width={1440}
-          height={1070}
+          width={4960}
+          height={3524}
+          quality={100}
           className='max-h-172 w-full object-cover object-top 2xl:max-h-258'
         />
         <div className='absolute bottom-0 left-0 h-35.5 w-full bg-gradient-to-t from-white' />
