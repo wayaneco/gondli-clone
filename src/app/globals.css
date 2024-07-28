@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .glass-border {
+    @apply p-px.62 pointer-events-none absolute inset-0 z-10;
+  }
+
+  .glass-border:before {
+    @apply p-px.62 bg-glass-border absolute inset-0 -z-10 content-[''];
+
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+  }
+}

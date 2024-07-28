@@ -47,6 +47,7 @@ const config = {
         '4.5': '1.125rem',
         '3.75': '0.938rem',
         '1.75': '0.4375rem',
+        'px.62': '1.62px',
         'px.5': '1.5px',
       },
       colors: {
@@ -77,6 +78,8 @@ const config = {
           'linear-gradient(180deg, #0C343D 0%, rgba(12, 52, 61, 0.97) 17.54%, rgba(12, 52, 61, 0.8) 49.91%, rgba(12, 52, 61, 0.5) 75.23%, rgba(12, 52, 61, 0.466667) 100%);',
         'feature-gradient':
           'linear-gradient(180deg, rgba(58, 98, 107, 0) 0%, rgba(58, 98, 107, 0.9) 64.83%, #3A626B 100%);',
+        'glass-border':
+          'linear-gradient(156.52deg, rgba(255, 255, 255, 0.25) 2.12%, rgba(255, 255, 255, 0.02) 57.18%, rgba(255, 255, 255, 0.02) 65.84%, rgba(255, 255, 255, 0.1) 93.02%)',
       },
       backdropBlur: {
         '2.5xl': '58px',

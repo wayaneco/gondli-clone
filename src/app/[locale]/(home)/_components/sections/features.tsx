@@ -16,9 +16,9 @@ export default function FeaturesSection() {
       className='mx-auto flex w-full flex-col items-center gap-10 bg-surface-brand text-center text-white sm:gap-20'
     >
       <SectionTitle>{t('features-title')}</SectionTitle>
-      <div className='grid w-full overflow-hidden rounded-3xl bg-feature backdrop-blur-2.5xl sm:grid-cols-2'>
+      <div className='relative grid w-full gap-px overflow-hidden rounded-3xl bg-border-feature backdrop-blur-2.5xl sm:grid-cols-2'>
         {features.map((feature, index) => (
-          <div className='relative border border-border-feature' key={index}>
+          <div className='relative bg-feature' key={index}>
             <div className='relative w-full overflow-hidden px-3.75 text-center sm:px-8'>
               <div className='flex min-h-39.25 flex-col justify-center gap-3 py-5'>
                 <h3 className='text-lg font-medium sm:text-xl'>
@@ -40,6 +40,7 @@ export default function FeaturesSection() {
             <div className='absolute bottom-0 h-22.25 w-full bg-feature-gradient' />
           </div>
         ))}
+        <div className='glass-border before:rounded-3xl' />
       </div>
       <div className='flex flex-col gap-15 sm:gap-10'>
         <SectionDescription className='max-w-212.5'>
