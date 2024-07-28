@@ -38,7 +38,7 @@ export default async function HeroBackground() {
                   alt='hero'
                   width={460}
                   height={660}
-                  quality={100}
+                  priority
                   className='h-auto w-full rounded-2xl pb-6'
                   key={path}
                 />
