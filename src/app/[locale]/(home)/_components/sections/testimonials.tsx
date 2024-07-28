@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
     <SectionWrapper
       displayMountains
       id='testimonials'
-      className='flex flex-col gap-25 bg-surface-brand text-center text-white sm:gap-27.25'
+      className='flex flex-col gap-25 bg-surface-brand pb-20 text-center text-white sm:gap-27.25'
     >
       <SectionTitle>{t('testimonials-title')}</SectionTitle>
       <Carousel className='pb-13.75 sm:px-20 sm:pb-10'>
@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
         </CarouselContent>
         <CarouselPrevious className='top-full sm:top-10' />
         <CarouselNext className='top-full sm:top-10' />
-        <CarouselNav className='translate-y-1/2' />
+        <CarouselNav className='translate-y-1/3' />
       </Carousel>
     </SectionWrapper>
   );

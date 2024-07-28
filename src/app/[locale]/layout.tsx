@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#0C343D',
+  maximumScale: 1,
 };
 
 export default async function RootLayout({
@@ -52,7 +53,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className='scroll-smooth'>
-      <body className={cn('bg-surface-primary leading-none', futura.className)}>
+      <body
+        className={cn(
+          'bg-surface-primary leading-snug sm:leading-none',
+          futura.className,
+        )}
+      >
         <NextIntlClientProvider messages={messages}>
           {isComingSoon ? (
             <ComingSoon />

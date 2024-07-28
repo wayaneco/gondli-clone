@@ -7,7 +7,7 @@ export default function WaitlistSection() {
   const t = useTranslations();
 
   return (
-    <SectionWrapper id='waitlist' className='space-y-20 !pb-0'>
+    <SectionWrapper id='waitlist' className='space-y-15 !pb-0 sm:space-y-20'>
       <div className='flex flex-col items-center gap-10'>
         <div className='space-y-8 text-center sm:space-y-6'>
           <SectionTitle>{t('waitlist-title')}</SectionTitle>
