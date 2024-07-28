@@ -58,8 +58,8 @@ export default function TestimonialsSection() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className='top-full sm:top-10' />
-        <CarouselNext className='top-full sm:top-10' />
+        <CarouselPrevious className='top-full sm:top-15' />
+        <CarouselNext className='top-full sm:top-15' />
         <CarouselNav className='translate-y-1/3' />
       </Carousel>
     </SectionWrapper>

@@ -3,7 +3,7 @@ import { glob } from 'glob';
 import { cn } from '@/lib/utils';
 
 const COLUMNS = {
-  length: 5,
+  length: 6,
   repeat: 3,
 };
 

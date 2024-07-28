@@ -43,7 +43,7 @@ export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
           type='text'
           placeholder={t('join-waitlist-placeholder')}
           submitButton={t('join-waitlist')}
-          className={'pr-36 sm:pr-44'}
+          className='pr-36 sm:pr-44'
           autoComplete='off'
           {...register('email', { required: true })}
         />
