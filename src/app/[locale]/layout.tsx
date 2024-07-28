@@ -69,11 +69,7 @@ export default async function RootLayout({
               <Footer />
             </>
           )}
-          <Toaster
-            toastOptions={{
-              className: 'bg-surface-brand border-situational-primary',
-            }}
-          />
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>
