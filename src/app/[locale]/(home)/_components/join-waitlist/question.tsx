@@ -1,11 +1,10 @@
+'use client';
+
 import { Checkbox } from '@/components/ui/checkbox';
+import { SurveyQuestion } from '@/types/api';
 
 export interface JoinWaitlistQuestionProps {
-  data: {
-    name: string;
-    question: string;
-    answers: { value: string; label: string }[];
-  };
+  data: SurveyQuestion;
   singleSelect?: boolean;
   value?: string | string[];
   onChange: (value: JoinWaitlistQuestionProps['value']) => void;
@@ -17,7 +16,7 @@ export default function JoinWaitlistQuestion({
   singleSelect,
   onChange,
 }: JoinWaitlistQuestionProps) {
-  const { name, question, answers } = data;
+  const { key, content, options } = data;
 
   const changeHandler = (checked: boolean, v: string) => {
     if (singleSelect) {
@@ -41,22 +40,24 @@ export default function JoinWaitlistQuestion({
   return (
     <div className='w-full rounded-1.5lg border border-border-primary text-sm sm:text-base'>
       <div className='rounded-t-1.5lg bg-border-primary p-5'>
-        <p>{question}</p>
+        <p>{content}</p>
       </div>
       <div className='flex flex-col gap-4 p-5'>
-        {answers.map(({ value: v, label }) => (
+        {options.map((option) => (
           <label
             className='flex cursor-pointer items-center gap-3'
-            htmlFor={v}
-            key={v}
+            htmlFor={option}
+            key={option}
           >
             <Checkbox
-              name={name}
-              id={v}
-              checked={value?.includes(v)}
-              onCheckedChange={(checked: boolean) => changeHandler(checked, v)}
+              name={key}
+              id={option}
+              checked={value?.includes(option)}
+              onCheckedChange={(checked: boolean) =>
+                changeHandler(checked, option)
+              }
             />
-            <p>{label}</p>
+            <p>{option}</p>
           </label>
         ))}
       </div>

@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import localFont from '@next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { Toaster } from '@/components/ui/sonner';
+import ComingSoon from '@/components/shared/coming-soon';
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import '../globals.css';
-import ComingSoon from '@/components/shared/coming-soon';
 
 export const futura = localFont({
   src: [
@@ -58,6 +59,11 @@ export default async function RootLayout({
               <Footer />
             </>
           )}
+          <Toaster
+            toastOptions={{
+              className: 'bg-surface-brand border-situational-primary',
+            }}
+          />
         </NextIntlClientProvider>
       </body>
     </html>

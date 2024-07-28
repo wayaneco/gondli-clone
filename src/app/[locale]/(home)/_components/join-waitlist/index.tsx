@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 import { Input, InputProps } from '@/components/ui/input';
 import JoinWaitlistDialog from './dialog';
+import { axios, csrf } from '@/lib/axios';
 
 export interface JoinWaitlistProps {
   inputVariant?: InputProps['variant'];
@@ -19,9 +21,17 @@ export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
 
   const submitHandler: SubmitHandler<{
     email?: string;
-  }> = () => {
-    setDialogOpen(true);
-    reset();
+  }> = async ({ email }) => {
+    try {
+      await csrf();
+
+      await axios.post('/subscribe', { email });
+
+      setDialogOpen(true);
+      reset();
+    } catch (error: any) {
+      toast(error.response.data.message);
+    }
   };
 
   return (
