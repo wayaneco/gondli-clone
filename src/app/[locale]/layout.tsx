@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from '@next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -9,7 +9,7 @@ import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import '../globals.css';
 
-export const futura = localFont({
+const futura = localFont({
   src: [
     {
       path: '../../../public/fonts/futura-light.ttf',
@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   title: 'Gondli - Easiest Way of Booking Wellness Services',
   description:
     'Your Path to wellness starts here. Finding and reserving top wellness services around you is now simple using Gondli',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0C343D',
 };
 
 export default async function RootLayout({
