@@ -3,22 +3,23 @@ import { glob } from 'glob';
 import { cn } from '@/lib/utils';
 
 const COLUMNS = {
-  length: 5,
+  length: {
+    base: 6,
+    mobile: 3,
+  },
   repeat: 3,
 };
 
-export default async function HeroBackground() {
-  const images = await glob('public/images/hero/*.{png,jpg,jpeg}');
-  const columns: string[][] = Array.from({ length: COLUMNS.length }, () => []);
-
-  images.forEach((filename, index) => {
-    columns[index % COLUMNS.length].push(filename.replace('public', ''));
-  });
-
+function Columns({
+  data,
+  className,
+}: {
+  data: string[][];
+  className?: string;
+}) {
   return (
-    <div className='absolute left-0 top-0 -z-10 flex h-full w-full justify-center gap-6 overflow-hidden bg-surface-brand p-inherit'>
-      <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero-gradient' />
-      {columns.map((paths, index) => (
+    <div className={cn('flex h-full w-full justify-center gap-6', className)}>
+      {data.map((paths, index) => (
         <div
           className='h-full min-w-39.25 flex-1 shrink-0 overflow-hidden sm:min-w-57.5'
           key={index}
@@ -27,14 +28,16 @@ export default async function HeroBackground() {
             <div
               className={cn(
                 'flex flex-col',
-                index % 2 === 0 ? 'animate-down' : 'animate-up',
+                index % 2 === 0
+                  ? 'animate-down-mobile sm:animate-down'
+                  : 'animate-up-mobile sm:animate-up',
               )}
               aria-hidden={!!i || undefined}
               key={i}
             >
               {paths.map((path) => (
                 <Image
-                  src={path}
+                  src={path.replace('public', '')}
                   alt='hero'
                   width={460}
                   height={660}
@@ -47,6 +50,32 @@ export default async function HeroBackground() {
           ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+export default async function HeroBackground() {
+  const images = await glob('public/images/hero/*.{png,jpg,jpeg}');
+
+  const columns: string[][] = Array.from(
+    { length: COLUMNS.length.base },
+    () => [],
+  );
+  const columnsMobile: string[][] = Array.from(
+    { length: COLUMNS.length.mobile },
+    () => [],
+  );
+
+  images.forEach((filename, index) => {
+    columns[index % COLUMNS.length.base].push(filename);
+    columnsMobile[index % COLUMNS.length.mobile].push(filename);
+  });
+
+  return (
+    <div className='absolute left-0 top-0 -z-10 h-full w-full overflow-hidden bg-surface-brand p-inherit'>
+      <Columns data={columns} className='hidden sm:flex' />
+      <Columns data={columnsMobile} className='sm:hidden' />
+      <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero-gradient' />
     </div>
   );
 }
