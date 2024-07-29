@@ -9,21 +9,26 @@ import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import '../globals.css';
 
-const futura = localFont({
+const gilroy = localFont({
   src: [
     {
-      path: '../../../public/fonts/futura-light.ttf',
+      path: '../../../public/fonts/gilroy-light.ttf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/futura-regular.ttf',
+      path: '../../../public/fonts/gilroy-regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/futura-medium.ttf',
+      path: '../../../public/fonts/gilroy-medium.ttf',
       weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/gilroy-black.ttf',
+      weight: '900',
       style: 'normal',
     },
   ],
@@ -56,7 +61,7 @@ export default async function RootLayout({
       <body
         className={cn(
           'bg-surface-primary leading-snug sm:leading-none',
-          futura.className,
+          gilroy.className,
         )}
       >
         <NextIntlClientProvider messages={messages}>

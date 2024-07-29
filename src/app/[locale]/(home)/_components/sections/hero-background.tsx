@@ -72,7 +72,7 @@ export default async function HeroBackground() {
   });
 
   return (
-    <div className='absolute left-0 top-0 -z-10 h-full w-full overflow-hidden bg-surface-brand p-inherit'>
+    <div className='absolute left-0 top-16.75 -z-10 h-full w-full overflow-hidden bg-surface-brand p-inherit'>
       <Columns data={columns} className='hidden sm:flex' />
       <Columns data={columnsMobile} className='sm:hidden' />
       <div className='absolute left-0 top-0 z-10 h-full w-full space-y-6 bg-hero-gradient' />
