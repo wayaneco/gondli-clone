@@ -58,6 +58,7 @@ const config = {
         'border-primary': '#DBECF0',
         'border-feature': '#4B6F77',
         'button-disabled': '#155B6B',
+        'text-primary': '#000B19',
         'text-secondary': 'rgba(135, 142, 151, 1)',
         'text-disabled': '#196D80',
         input: 'rgba(195, 195, 195, 0.3)',

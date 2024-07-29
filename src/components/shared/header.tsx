@@ -34,7 +34,7 @@ export default function Header() {
         priority
         width={101}
         height={22}
-        className='h-4.5 sm:h-auto'
+        className='h-4.5 w-auto sm:h-auto'
       />
       <nav className='hidden lg:block'>
         <ul className='flex gap-10 text-white'>
