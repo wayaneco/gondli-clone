@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
-import { toast } from 'sonner';
 import { Input, InputProps } from '@/components/ui/input';
 import JoinWaitlistDialog from './dialog';
+import { handleError } from '@/lib/utils';
 import { axios, csrf } from '@/lib/axios';
 
 export interface JoinWaitlistProps {
@@ -30,7 +30,7 @@ export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
       setDialogOpen(true);
       reset();
     } catch (error: any) {
-      toast(error.response.data.message);
+      handleError(error, t);
     }
   };
 

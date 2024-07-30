@@ -80,5 +80,6 @@
   "do-it-later": "I’do it Later",
   "next-step": "Next Step",
   "finish": "Finish",
-  "discard": "Discard"
+  "discard": "Discard",
+  "something-went-wrong": "Something went wrong. Please try again later."
 }

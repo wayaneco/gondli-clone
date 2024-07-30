@@ -39,7 +39,7 @@ export default function Header() {
         />
       </div>
       <nav className='hidden lg:block'>
-        <ul className='flex gap-10 text-white'>
+        <ul className='flex gap-10 text-nowrap text-white'>
           {navigation.map(({ href, label }) => (
             <li key={href}>
               <Link href={href}>{label}</Link>

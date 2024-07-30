@@ -80,5 +80,6 @@
   "do-it-later": "Lo farò più tardi",
   "next-step": "Prossimo passo",
   "finish": "Fine",
-  "discard": "Scartare"
+  "discard": "Scartare",
+  "something-went-wrong": "Qualcosa è andato storto. Riprovare più tardi."
 }

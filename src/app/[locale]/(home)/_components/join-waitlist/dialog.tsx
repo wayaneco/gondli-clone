@@ -2,7 +2,7 @@
 
 import { useState, Dispatch, SetStateAction } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { toast } from 'sonner';
 import useSWR from 'swr';
 import {
@@ -14,7 +14,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn, handleError } from '@/lib/utils';
 import { axios, csrf } from '@/lib/axios';
 import { SurveyQuestions } from '@/types/api';
 import JoinWaitlistQuestion from './question';
@@ -30,9 +30,11 @@ export default function JoinWaitlistDialog({
 }: JoinWaitlistDialogProps) {
   const t = useTranslations();
 
+  const locale = useLocale();
+
   const { control, reset, handleSubmit } = useForm();
 
-  const { data } = useSWR('/survey/questions', (url) =>
+  const { data } = useSWR(`/survey/questions?locale=${locale}`, (url) =>
     axios.get<SurveyQuestions>(url).then((res) => res.data.data),
   );
 
@@ -65,7 +67,7 @@ export default function JoinWaitlistDialog({
 
       toast(response.data.message);
     } catch (error: any) {
-      toast(error.response.data.message);
+      handleError(error, t);
     }
   };
 
