@@ -15,8 +15,7 @@ export default function TestimonialsSection() {
 
   const testimonials = Array.from({ length: 4 }, (_, index) => ({
     id: index,
-    testimonial:
-      'Discovering Gondli was a game-changer for me! The platform seamlessly connected me with top-notch wellness practitioners, making it effortless to prioritize self-care. From soothing spa experiences to invigorating fitness sessions, Gondli has transformed the way I approach my well-being.',
+    testimonial: t('testimonial'),
     author: {
       name: 'Andre Lawson',
       image: '/images/testimonials/andre-lawson.png',

@@ -27,15 +27,17 @@ export default function Header() {
   ];
 
   return (
-    <header className='fixed top-0 z-20 flex h-16.75 w-full items-center justify-between bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
-      <Image
-        src={'/images/logo/index.svg'}
-        alt='logo'
-        priority
-        width={101}
-        height={22}
-        className='h-4.5 w-auto sm:h-auto'
-      />
+    <header className='fixed top-0 z-20 flex h-16.75 w-full items-center justify-between gap-5 bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
+      <div className='w-full'>
+        <Image
+          src={'/images/logo/index.svg'}
+          alt='logo'
+          priority
+          width={101}
+          height={22}
+          className='h-4.5 w-auto sm:h-auto'
+        />
+      </div>
       <nav className='hidden lg:block'>
         <ul className='flex gap-10 text-white'>
           {navigation.map(({ href, label }) => (
@@ -45,7 +47,7 @@ export default function Header() {
           ))}
         </ul>
       </nav>
-      <div className='flex gap-5'>
+      <div className='flex w-full justify-end gap-5'>
         <Link href='#waitlist'>
           <Button>{t('join-waitlist')}</Button>
         </Link>

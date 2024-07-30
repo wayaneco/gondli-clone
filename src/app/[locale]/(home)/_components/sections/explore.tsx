@@ -7,25 +7,25 @@ export default function ExploreSection() {
   const t = useTranslations();
 
   const services = [
-    'Yoga',
-    'Fitness',
-    'Massage',
-    'Sauna',
-    'Spa',
-    'Reiki',
-    'Chiropractic',
-    'Pilates',
-    'Meditation',
-    'Nutrition',
-    'Ayurveda',
-    'Acupuncture',
-    'Aromatherapy',
-    'Counseling',
-    'Detox',
-    'Mindfulness',
-    'Retreats',
-    'Coaching',
-    'Tai Chi',
+    'yoga',
+    'fitness',
+    'massage',
+    'sauna',
+    'spa',
+    'reiki',
+    'chiropractic',
+    'pilates',
+    'meditation',
+    'nutrition',
+    'ayurveda',
+    'acupuncture',
+    'aromatherapy',
+    'counseling',
+    'detox',
+    'mindfulness',
+    'retreats',
+    'coaching',
+    'tai-chi',
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function ExploreSection() {
         </div>
         <div className='flex flex-wrap justify-center gap-2 sm:justify-start sm:gap-2.5'>
           {services.map((service) => (
-            <Badge key={service}>{service}</Badge>
+            <Badge key={service}>{t(service)}</Badge>
           ))}
         </div>
       </div>

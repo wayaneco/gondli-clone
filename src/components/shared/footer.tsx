@@ -11,19 +11,19 @@ export default function Footer() {
       title: t('discover'),
       links: [
         {
-          label: 'About Us',
+          label: t('about-us'),
           href: '#',
         },
         {
-          label: 'Services',
+          label: t('services'),
           href: '#',
         },
         {
-          label: 'Subscriptions',
+          label: t('subscriptions'),
           href: '#',
         },
         {
-          label: 'Our Blog',
+          label: t('our-blog'),
           href: '#',
         },
       ],
@@ -32,19 +32,19 @@ export default function Footer() {
       title: t('help'),
       links: [
         {
-          label: 'FAQ',
+          label: t('faq'),
           href: '#',
         },
         {
-          label: 'Customer Service',
+          label: t('customer-service'),
           href: '#',
         },
         {
-          label: 'Terms & Conditions',
+          label: t('terms-and-conditions'),
           href: '#',
         },
         {
-          label: 'Privacy Policy',
+          label: t('privacy-policy'),
           href: '#',
         },
       ],
@@ -74,11 +74,11 @@ export default function Footer() {
       title: t('business'),
       links: [
         {
-          label: 'Register Your Business',
+          label: t('register-your-business'),
           href: '#',
         },
         {
-          label: 'Advertise on Gondli',
+          label: t('advertise-on-gondli'),
           href: '#',
         },
       ],
