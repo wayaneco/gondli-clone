@@ -4,10 +4,8 @@ import cookie from 'cookie';
 const apiURL = process.env.NEXT_PUBLIC_API_URL;
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-const { NEXT_LOCALE } = cookie.parse(document.cookie);
-
 export const axios = Axios.create({
-  baseURL: `${apiURL}/api${NEXT_LOCALE ? `/${NEXT_LOCALE}` : ''}/v1`,
+  baseURL: `${apiURL}/api/v1`,
   headers: {
     'X-API-Key': apiKey,
   },
@@ -18,3 +16,13 @@ export const csrf = () => {
     baseURL: apiURL,
   });
 };
+
+axios.interceptors.request.use((config) => {
+  const { NEXT_LOCALE } = cookie.parse(document.cookie);
+
+  if (NEXT_LOCALE) {
+    config.baseURL = `${apiURL}/api/${NEXT_LOCALE}/v1`;
+  }
+
+  return config;
+});

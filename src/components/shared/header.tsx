@@ -4,6 +4,15 @@ import { useTranslations } from 'next-intl';
 import { Menu } from '@/icons';
 import { Button } from '@/components/ui/button';
 
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+  SheetClose,
+} from '@/components/ui/sheet';
+
 export default function Header() {
   const t = useTranslations();
 
@@ -27,7 +36,7 @@ export default function Header() {
   ];
 
   return (
-    <header className='fixed top-0 z-20 flex h-16.75 w-full items-center justify-between gap-5 bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
+    <header className='fixed top-0 z-30 flex h-16.75 w-full items-center justify-between gap-5 bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
       <div className='w-full'>
         <Image
           src={'/images/logo/index.svg'}
@@ -51,9 +60,28 @@ export default function Header() {
         <Link href='#waitlist'>
           <Button>{t('join-waitlist')}</Button>
         </Link>
-        <button type='button' className='text-white lg:hidden'>
-          <Menu />
-        </button>
+        <Sheet>
+          <SheetTrigger>
+            <Menu className='text-white lg:hidden' />
+          </SheetTrigger>
+          <SheetContent side={'top'}>
+            <nav>
+              <ul className='flex flex-col gap-7 text-nowrap text-white'>
+                {navigation.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link href={href}>
+                      <SheetClose>{label}</SheetClose>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <SheetTitle>Header Navigation</SheetTitle>
+            <SheetDescription>
+              The main navigation of the page.
+            </SheetDescription>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

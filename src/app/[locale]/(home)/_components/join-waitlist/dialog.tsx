@@ -2,7 +2,7 @@
 
 import { useState, Dispatch, SetStateAction } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 import useSWR from 'swr';
 import {
@@ -30,11 +30,9 @@ export default function JoinWaitlistDialog({
 }: JoinWaitlistDialogProps) {
   const t = useTranslations();
 
-  const locale = useLocale();
-
   const { control, reset, handleSubmit } = useForm();
 
-  const { data } = useSWR(`/survey/questions?locale=${locale}`, (url) =>
+  const { data } = useSWR('/survey/questions', (url) =>
     axios.get<SurveyQuestions>(url).then((res) => res.data.data),
   );
 
