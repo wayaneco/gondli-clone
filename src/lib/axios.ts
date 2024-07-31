@@ -11,13 +11,14 @@ export const axios = Axios.create({
   },
 });
 
-export const csrf = () => {
+export const csrf = () =>
   axios.get('/sanctum/csrf-cookie', {
     baseURL: apiURL,
   });
-};
 
 axios.interceptors.request.use((config) => {
+  if (config.url?.includes('csrf')) return config;
+
   const { NEXT_LOCALE } = cookie.parse(document.cookie);
 
   if (NEXT_LOCALE) {

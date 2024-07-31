@@ -2,7 +2,7 @@ import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
-import { Button } from './button';
+import { Button, ButtonProps } from './button';
 
 const inputVariants = cva(
   'flex h-12.25 w-full rounded-full px-7 text-sm outline-none file:border-0 file:bg-transparent file:font-medium disabled:cursor-not-allowed disabled:opacity-50 sm:h-16 sm:text-base',
@@ -23,7 +23,7 @@ const inputVariants = cva(
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
-  submitButton?: string;
+  submitButton?: ButtonProps;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -40,9 +40,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <Button
             type='submit'
             className='absolute right-1 top-1 sm:right-1.5 sm:top-1.5'
-          >
-            {submitButton}
-          </Button>
+            {...submitButton}
+          />
         )}
         {(!variant || variant === 'default') && (
           <div className='glass-border before:rounded-full' />

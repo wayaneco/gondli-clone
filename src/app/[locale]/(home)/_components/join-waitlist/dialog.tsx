@@ -30,7 +30,7 @@ export default function JoinWaitlistDialog({
 }: JoinWaitlistDialogProps) {
   const t = useTranslations();
 
-  const { control, reset, handleSubmit } = useForm();
+  const { control, formState, reset, handleSubmit } = useForm();
 
   const { data } = useSWR('/survey/questions', (url) =>
     axios.get<SurveyQuestions>(url).then((res) => res.data.data),
@@ -113,7 +113,7 @@ export default function JoinWaitlistDialog({
             >
               {!step ? t('do-it-later') : t('discard')}
             </Button>
-            <Button type='submit' size={'sm'}>
+            <Button type='submit' size={'sm'} loading={formState.isSubmitting}>
               {!step ? t('next-step') : t('finish')}
             </Button>
           </DialogFooter>

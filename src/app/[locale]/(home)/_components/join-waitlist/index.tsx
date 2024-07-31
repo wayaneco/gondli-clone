@@ -15,7 +15,7 @@ export interface JoinWaitlistProps {
 export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
   const t = useTranslations();
 
-  const { register, reset, handleSubmit } = useForm();
+  const { formState, register, reset, handleSubmit } = useForm();
 
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
@@ -42,7 +42,10 @@ export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
           variant={inputVariant}
           type='text'
           placeholder={t('join-waitlist-placeholder')}
-          submitButton={t('join-waitlist')}
+          submitButton={{
+            children: t('join-waitlist'),
+            loading: formState.isSubmitting,
+          }}
           className='pr-52 sm:pr-64'
           autoComplete='off'
           {...register('email', { required: true })}
