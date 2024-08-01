@@ -37,12 +37,12 @@ export default function ExploreSection() {
         <div className='space-y-8 text-center sm:space-y-10 sm:text-start'>
           <SectionTitle>{t('explore-title')}</SectionTitle>
           <Image
-            src={'/images/explore/mobile.png'}
+            src={'/images/explore.png'}
             alt='explore'
             width={345}
             height={345}
             quality={100}
-            className='mx-auto rounded-3xl sm:mx-0 lg:hidden'
+            className='mx-auto h-86.25 w-86.25 rounded-3xl object-cover object-center sm:mx-0 lg:hidden'
           />
           <SectionDescription>{t('explore-description')}</SectionDescription>
         </div>
@@ -53,7 +53,7 @@ export default function ExploreSection() {
         </div>
       </div>
       <Image
-        src={'/images/explore/index.png'}
+        src={'/images/explore.png'}
         alt='explore'
         width={450}
         height={650}
