@@ -46,7 +46,6 @@ export default function JoinWaitlist({ inputVariant }: JoinWaitlistProps) {
             children: t('join-waitlist'),
             loading: formState.isSubmitting,
           }}
-          className='pr-52 sm:pr-64'
           autoComplete='off'
           {...register('email', { required: true })}
         />

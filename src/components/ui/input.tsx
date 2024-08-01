@@ -29,6 +29,15 @@ export interface InputProps
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, variant, submitButton, ...props }, ref) => {
+    const buttonRef = React.useRef<HTMLButtonElement>(null);
+    const [buttonWidth, setButtonWidth] = React.useState(0);
+
+    React.useEffect(() => {
+      if (buttonRef.current) {
+        setButtonWidth(buttonRef.current.offsetWidth);
+      }
+    }, [submitButton]);
+
     return (
       <div
         className={cn(
@@ -40,6 +49,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(inputVariants({ variant, className }))}
+          style={
+            submitButton
+              ? {
+                  paddingRight: `${buttonWidth + 18}px`,
+                }
+              : {}
+          }
           ref={ref}
           {...props}
         />
@@ -47,6 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <Button
             type='submit'
             className='absolute right-1 top-1 sm:right-1.5 sm:top-1.5'
+            ref={buttonRef}
             {...submitButton}
           />
         )}
