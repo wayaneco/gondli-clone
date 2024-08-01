@@ -59,6 +59,7 @@ const config = {
         'surface-error': '#D56C6C',
         'situational-primary': '#124C59',
         'situational-secondary': '#A9E2EF',
+        'pistachio-green': '#ABCF6F',
         'border-primary': '#DBECF0',
         'border-feature': '#4B6F77',
         'button-disabled': '#155B6B',
@@ -89,6 +90,9 @@ const config = {
       borderRadius: {
         '1.5sm': '0.25rem',
         '1.5lg': '0.625rem',
+      },
+      boxShadow: {
+        'input-form': '0px 0px 0px 3px #E7F3E8',
       },
       padding: {
         inherit: 'inherit',

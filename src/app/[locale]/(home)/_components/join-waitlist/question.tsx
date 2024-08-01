@@ -1,6 +1,9 @@
 'use client';
 
+import { ChangeEvent, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
 import { SurveyQuestion } from '@/types/api';
 
 export interface JoinWaitlistQuestionProps {
@@ -18,23 +21,60 @@ export default function JoinWaitlistQuestion({
 }: JoinWaitlistQuestionProps) {
   const { key, content, options } = data;
 
+  const t = useTranslations();
+
+  const [otherChecked, setOtherChecked] = useState(false);
+  const [otherValue, setOtherValue] = useState('');
+
+  const isArrayValue = Array.isArray(value);
+
   const changeHandler = (checked: boolean, v: string) => {
     if (singleSelect) {
       onChange(checked ? v : undefined);
       return;
     }
 
-    if (!Array.isArray(value)) {
-      onChange([v]);
-      return;
-    }
+    const updatedValue = isArrayValue
+      ? checked
+        ? [...value, v]
+        : value.filter((item) => item !== v)
+      : [v];
 
-    if (!checked) {
-      onChange(value.filter((item) => item !== v));
-      return;
-    }
+    onChange(updatedValue);
+  };
 
-    onChange([...value, v]);
+  const otherChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+
+    setOtherValue(newValue);
+
+    if (isArrayValue) {
+      const filteredValue = value.filter((item) => item !== otherValue);
+
+      onChange(newValue ? [...filteredValue, newValue] : filteredValue);
+    } else {
+      onChange(newValue);
+    }
+  };
+
+  const checkedChangeHandler = (checked: boolean, option: string) => {
+    const isOther = option.includes('(please specify)');
+
+    if (isOther) {
+      setOtherChecked(checked);
+
+      if (!checked) {
+        onChange(
+          isArrayValue
+            ? value.filter((item) => item !== otherValue)
+            : undefined,
+        );
+      } else if (otherValue && !value?.includes(otherValue)) {
+        onChange(isArrayValue ? [...value, otherValue] : otherValue);
+      }
+    } else {
+      changeHandler(checked, option);
+    }
   };
 
   return (
@@ -43,23 +83,40 @@ export default function JoinWaitlistQuestion({
         <p>{content}</p>
       </div>
       <div className='flex flex-col gap-4 p-5'>
-        {options.map((option) => (
-          <label
-            className='flex cursor-pointer items-center gap-3'
-            htmlFor={option}
-            key={option}
-          >
-            <Checkbox
-              name={key}
-              id={option}
-              checked={value?.includes(option)}
-              onCheckedChange={(checked: boolean) =>
-                changeHandler(checked, option)
-              }
-            />
-            <p>{option}</p>
-          </label>
-        ))}
+        {options.map((option) => {
+          const id = `${key}-${option}`;
+
+          return (
+            <label
+              className='flex cursor-pointer items-center gap-3'
+              htmlFor={id}
+              key={id}
+            >
+              <Checkbox
+                name={key}
+                id={id}
+                checked={
+                  option.includes('(please specify)')
+                    ? otherChecked
+                    : value?.includes(option)
+                }
+                onCheckedChange={(checked: boolean) =>
+                  checkedChangeHandler(checked, option)
+                }
+              />
+              <p>{option}</p>
+            </label>
+          );
+        })}
+        {otherChecked && (
+          <Input
+            variant={'form'}
+            placeholder={t('specify-reason')}
+            autoFocus
+            value={otherValue}
+            onChange={otherChangeHandler}
+          />
+        )}
       </div>
     </div>
   );

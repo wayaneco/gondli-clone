@@ -4,11 +4,11 @@
 
 @layer base {
   .glass-border {
-    @apply p-px.62 pointer-events-none absolute inset-0 z-10;
+    @apply pointer-events-none absolute inset-0 z-10 p-px.62;
   }
 
   .glass-border:before {
-    @apply p-px.62 bg-glass-border absolute inset-0 -z-10 content-[''];
+    @apply absolute inset-0 -z-10 bg-glass-border p-px.62 content-[''];
 
     mask:
       linear-gradient(#fff 0 0) content-box,
