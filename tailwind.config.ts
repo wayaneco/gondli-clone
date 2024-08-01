@@ -28,6 +28,8 @@ const config = {
         '157.75': '39.4375rem',
         '150': '37.5rem',
         '125': '31.25rem',
+        '121.75': '30.4375rem',
+        '121.75/50': '15.21875rem',
         '112.5': '28.125rem',
         '86.25': '21.563rem',
         '57.5': '14.375rem',
@@ -53,6 +55,8 @@ const config = {
       colors: {
         'surface-primary': '#F5F9FF',
         'surface-brand': '#0C343D',
+        'surface-success': '#5CB170',
+        'surface-error': '#D56C6C',
         'situational-primary': '#124C59',
         'situational-secondary': '#A9E2EF',
         'border-primary': '#DBECF0',
@@ -66,11 +70,6 @@ const config = {
         feature: '#3A626B',
         'dialog-background': '#000B1980',
       },
-      fontSize: {
-        '2.25xl': '1.625rem',
-        '2.5xl': '1.75rem',
-        '4.25xl': '2.5rem',
-      },
       backgroundImage: {
         'coming-soon': "url('/images/coming-soon.png')",
         'button-default':
@@ -82,18 +81,26 @@ const config = {
         'glass-border':
           'linear-gradient(156.52deg, rgba(255, 255, 255, 0.25) 2.12%, rgba(255, 255, 255, 0.02) 57.18%, rgba(255, 255, 255, 0.02) 65.84%, rgba(255, 255, 255, 0.1) 93.02%)',
       },
-      backdropBlur: {
-        '2.5xl': '58px',
-      },
-      padding: {
-        inherit: 'inherit',
-      },
-      borderWidth: {
-        '1.5': '1.5px',
+      fontSize: {
+        '2.25xl': '1.625rem',
+        '2.5xl': '1.75rem',
+        '4.25xl': '2.5rem',
       },
       borderRadius: {
         '1.5sm': '0.25rem',
         '1.5lg': '0.625rem',
+      },
+      padding: {
+        inherit: 'inherit',
+      },
+      backdropBlur: {
+        '2.5xl': '58px',
+      },
+      borderWidth: {
+        '1.5': '1.5px',
+      },
+      screens: {
+        xs: '600px',
       },
       keyframes: {
         'accordion-down': {

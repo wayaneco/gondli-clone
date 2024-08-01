@@ -3,7 +3,6 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
-import { toast } from 'sonner';
 import useSWR from 'swr';
 import {
   Dialog,
@@ -14,6 +13,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { toast } from '@/components/ui/sonner';
 import { cn, handleError } from '@/lib/utils';
 import { axios, csrf } from '@/lib/axios';
 import { SurveyQuestions } from '@/types/api';
@@ -63,7 +63,7 @@ export default function JoinWaitlistDialog({
 
       openChangeHandler(false);
 
-      toast(response.data.message);
+      toast('success', response.data.message);
     } catch (error: any) {
       handleError(error, t);
     }

@@ -74,7 +74,7 @@ export default async function RootLayout({
               <Footer />
             </>
           )}
-          <Toaster />
+          <Toaster className={gilroy.className} />
         </NextIntlClientProvider>
       </body>
     </html>
