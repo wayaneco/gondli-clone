@@ -81,5 +81,6 @@
   "next-step": "Prossimo passo",
   "finish": "Fine",
   "discard": "Scartare",
-  "something-went-wrong": "Qualcosa è andato storto. Riprovare più tardi."
+  "something-went-wrong": "Qualcosa è andato storto. Riprovare più tardi.",
+  "specify-reason": "Specificare il motivo"
 }

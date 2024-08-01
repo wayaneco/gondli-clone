@@ -77,9 +77,10 @@
   "all-rights-reserved": "All Rights Reserved",
   "join-waitlist-welcome-title": "Thank you for joining",
   "join-waitlist-welcome-description": "We would like to ask you few more questions to make your experience even better when launching Gondli.",
-  "do-it-later": "I’do it Later",
+  "do-it-later": "I’ll do it Later",
   "next-step": "Next Step",
   "finish": "Finish",
   "discard": "Discard",
-  "something-went-wrong": "Something went wrong. Please try again later."
+  "something-went-wrong": "Something went wrong. Please try again later.",
+  "specify-reason": "Specify Reason"
 }

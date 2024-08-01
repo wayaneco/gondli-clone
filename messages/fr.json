@@ -81,5 +81,6 @@
   "next-step": "Prochaine étape",
   "finish": "Terminer",
   "discard": "Jeter",
-  "something-went-wrong": "Un problème s'est produit. Veuillez réessayer plus tard."
+  "something-went-wrong": "Un problème s'est produit. Veuillez réessayer plus tard.",
+  "specify-reason": "Je le ferai plus tard"
 }

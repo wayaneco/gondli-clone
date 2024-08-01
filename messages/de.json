@@ -81,5 +81,6 @@
   "next-step": "Nächster Schritt",
   "finish": "Beenden",
   "discard": "Verwerfen",
-  "something-went-wrong": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal."
+  "something-went-wrong": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal.",
+  "specify-reason": "Grund angeben"
 }
