@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
 import { SurveyQuestion } from '@/types/api';
 
 export interface JoinWaitlistQuestionProps {
@@ -27,6 +28,8 @@ export default function JoinWaitlistQuestion({
   const [otherValue, setOtherValue] = useState('');
 
   const isArrayValue = Array.isArray(value);
+  const isMax3 = content.includes('(Select up to 3)');
+  const isMax = isArrayValue && isMax3 && value.length > 2;
 
   const changeHandler = (checked: boolean, v: string) => {
     if (singleSelect) {
@@ -60,6 +63,10 @@ export default function JoinWaitlistQuestion({
   const checkedChangeHandler = (checked: boolean, option: string) => {
     const isOther = option.includes('(please specify)');
 
+    if (isMax && checked) {
+      return;
+    }
+
     if (isOther) {
       setOtherChecked(checked);
 
@@ -85,21 +92,23 @@ export default function JoinWaitlistQuestion({
       <div className='flex flex-col gap-4 p-5'>
         {options.map((option) => {
           const id = `${key}-${option}`;
+          const checked = option.includes('(please specify)')
+            ? otherChecked
+            : value?.includes(option);
 
           return (
             <label
-              className='flex cursor-pointer items-center gap-3'
+              className={cn(
+                'flex cursor-pointer items-center gap-3',
+                isMax && !checked && 'pointer-events-none',
+              )}
               htmlFor={id}
               key={id}
             >
               <Checkbox
                 name={key}
                 id={id}
-                checked={
-                  option.includes('(please specify)')
-                    ? otherChecked
-                    : value?.includes(option)
-                }
+                checked={checked}
                 onCheckedChange={(checked: boolean) =>
                   checkedChangeHandler(checked, option)
                 }
