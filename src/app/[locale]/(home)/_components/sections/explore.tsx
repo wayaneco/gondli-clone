@@ -50,6 +50,7 @@ export default function ExploreSection() {
           {services.map((service) => (
             <Badge key={service}>{t(service)}</Badge>
           ))}
+          <Badge>{t('and-many-more')}</Badge>
         </div>
       </div>
       <Image
