@@ -2,7 +2,7 @@
 
 import { useState, Dispatch, SetStateAction } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import useSWR from 'swr';
 import {
   Dialog,
@@ -28,11 +28,13 @@ export default function JoinWaitlistDialog({
   open,
   setOpen,
 }: JoinWaitlistDialogProps) {
+  const locale = useLocale();
+
   const t = useTranslations();
 
   const { control, formState, reset, handleSubmit } = useForm();
 
-  const { data } = useSWR('/survey/questions', (url) =>
+  const { data } = useSWR(locale ? '/survey/questions' : null, (url) =>
     axios.get<SurveyQuestions>(url).then((res) => res.data.data),
   );
 
@@ -50,16 +52,21 @@ export default function JoinWaitlistDialog({
 
   const submitHandler: SubmitHandler<{
     q1?: SurveyQuestions['data']['sections'][number];
-  }> = async (data) => {
-    if (!step && data.q1) {
-      setStep(data.q1);
+  }> = async (submittedData) => {
+    if (!step && submittedData.q1) {
+      const updatedStep =
+        data?.sections?.[
+          data?.questions?.[0]?.options?.indexOf(submittedData?.q1)
+        ];
+
+      setStep(updatedStep);
       return;
     }
 
     try {
       await csrf();
 
-      const response = await axios.post('/survey/answers', data);
+      const response = await axios.post('/survey/answers', submittedData);
 
       openChangeHandler(false);
 
