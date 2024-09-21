@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Globe } from '@/icons';
+import { getLocale } from 'next-intl/server';
 
 export default function Footer() {
+  const locale = useLocale();
   const t = useTranslations();
 
   const navigation = [
@@ -12,7 +14,7 @@ export default function Footer() {
       links: [
         {
           label: t('about-us'),
-          href: '#',
+          href: '/about-us',
         },
         {
           label: t('services'),
@@ -101,7 +103,7 @@ export default function Footer() {
             <h3 className='text-situational-secondary'>{title}</h3>
             {links.map(({ label, href }) => (
               <li key={label}>
-                <Link href={href}>{label}</Link>
+                <Link href={`${locale}/${href}`}>{label}</Link>
               </li>
             ))}
           </ul>

@@ -1,6 +1,10 @@
-import { useTranslations } from 'next-intl';
-import { SectionDescription, SectionTitle, SectionWrapper } from '.';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import {
+  SectionDescription,
+  SectionTitle,
+  SectionWrapper,
+} from '@/components/shared/section';
 
 export default function SolutionsSection() {
   const t = useTranslations();

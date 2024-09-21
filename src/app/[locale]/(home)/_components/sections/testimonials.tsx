@@ -8,7 +8,11 @@ import {
   CarouselPrevious,
   CarouselNav,
 } from '@/components/ui/carousel';
-import { SectionWrapper, SectionTitle, SectionDescription } from '.';
+import {
+  SectionWrapper,
+  SectionTitle,
+  SectionDescription,
+} from '@/components/shared/section';
 
 export default function TestimonialsSection() {
   const t = useTranslations();

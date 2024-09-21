@@ -5,8 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+import {
+  SectionWrapper,
+  SectionTitle,
+  SectionDescription,
+} from '@/components/shared/section';
 import { cn } from '@/lib/utils';
-import { SectionWrapper, SectionTitle, SectionDescription } from '.';
 
 export default function FeaturesSection() {
   const t = useTranslations();

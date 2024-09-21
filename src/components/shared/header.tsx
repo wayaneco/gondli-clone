@@ -18,19 +18,19 @@ export default function Header() {
 
   const navigation = [
     {
-      href: '#explore',
+      href: '/#explore',
       label: t('explore'),
     },
     {
-      href: '#features',
+      href: '/#features',
       label: t('features'),
     },
     {
-      href: '#solutions',
+      href: '/#solutions',
       label: t('solutions'),
     },
     {
-      href: '#testimonials',
+      href: '/#testimonials',
       label: t('testimonials'),
     },
   ];
@@ -57,7 +57,7 @@ export default function Header() {
         </ul>
       </nav>
       <div className='flex w-full justify-end gap-5'>
-        <Link href='#waitlist'>
+        <Link href='/#waitlist'>
           <Button>{t('join-waitlist')}</Button>
         </Link>
         <Sheet>

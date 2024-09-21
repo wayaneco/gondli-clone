@@ -1,7 +1,11 @@
-import { useTranslations } from 'next-intl';
-import { SectionWrapper, SectionTitle, SectionDescription } from '.';
-import JoinWaitlist from '../join-waitlist';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import {
+  SectionWrapper,
+  SectionTitle,
+  SectionDescription,
+} from '@/components/shared/section';
+import JoinWaitlist from '../join-waitlist';
 
 export default function WaitlistSection() {
   const t = useTranslations();

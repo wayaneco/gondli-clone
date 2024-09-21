@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
-import { SectionWrapper, SectionTitle, SectionDescription } from '.';
+import {
+  SectionWrapper,
+  SectionTitle,
+  SectionDescription,
+} from '@/components/shared/section';
 
 export default function ExploreSection() {
   const t = useTranslations();

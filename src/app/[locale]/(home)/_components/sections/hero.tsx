@@ -1,7 +1,11 @@
 import { useTranslations } from 'next-intl';
+import {
+  SectionWrapper,
+  SectionTitle,
+  SectionDescription,
+} from '@/components/shared/section';
 import HeroBackground from './hero-background';
 import JoinWaitlist from '../join-waitlist';
-import { SectionWrapper, SectionTitle, SectionDescription } from '.';
 
 export default function HeroSection() {
   const t = useTranslations();
