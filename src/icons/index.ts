@@ -7,3 +7,4 @@ export { default as XCircle } from './x-circle.svg';
 export { default as XMini } from './x-mini.svg';
 export { default as Check } from './check.svg';
 export { default as CheckCircle } from './check-circle.svg';
+export { default as Quotes } from './quotes.svg';
