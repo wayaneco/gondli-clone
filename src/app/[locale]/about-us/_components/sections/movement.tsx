@@ -5,19 +5,29 @@ import {
   SectionTitle,
   SectionDescription,
 } from '@/components/shared/section';
-import JoinWaitlist from '../join-waitlist';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
-export default function WaitlistSection() {
+export default function MovementSection() {
   const t = useTranslations();
 
   return (
-    <SectionWrapper id='waitlist' className='space-y-15 !pb-0 sm:space-y-20'>
+    <SectionWrapper id='movement' className='space-y-16 !pb-0 sm:space-y-20'>
       <div className='flex flex-col items-center gap-10'>
         <div className='space-y-8 text-center sm:space-y-6'>
-          <SectionTitle>{t('waitlist-title')}</SectionTitle>
-          <SectionDescription>{t('waitlist-description')}</SectionDescription>
+          <SectionTitle>{t('movement-title')}</SectionTitle>
+          <SectionDescription className='max-w-212.5'>
+            {t('movement-description')}
+          </SectionDescription>
+          <div className='space-x-3 pt-2 sm:space-x-5 sm:pt-4'>
+            <Link href={'/#waitlist'}>
+              <Button>{t('get-started')}</Button>
+            </Link>
+            <Link href={'/#waitlist'}>
+              <Button variant={'outline'}>{t('explore-listing')}</Button>
+            </Link>
+          </div>
         </div>
-        <JoinWaitlist inputVariant={'solid'} />
       </div>
       <div className='relative'>
         <Image
