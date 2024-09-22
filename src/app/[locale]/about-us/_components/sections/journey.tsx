@@ -6,7 +6,10 @@ export default function JourneySection() {
   const t = useTranslations();
 
   return (
-    <SectionWrapper className='relative bg-surface-brand pb-80 pt-20 text-white sm:py-44'>
+    <SectionWrapper
+      id='journey'
+      className='relative bg-surface-brand pb-80 pt-20 text-white sm:py-44'
+    >
       <div className='relative z-10 space-y-8 text-center sm:space-y-10 sm:text-left'>
         <SectionTitle>{t('journey-title')}</SectionTitle>
         <p className='max-w-162.5 leading-snug'>{t('journey-description')}</p>

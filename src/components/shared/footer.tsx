@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Globe } from '@/icons';
-import { getLocale } from 'next-intl/server';
 
 export default function Footer() {
   const locale = useLocale();
