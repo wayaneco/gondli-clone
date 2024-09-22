@@ -20,7 +20,7 @@ export default function JourneySection() {
         width={949}
         height={474}
         quality={100}
-        className='min-w-136.5 absolute -bottom-6 -right-25 sm:-right-60 sm:w-auto'
+        className='absolute -bottom-6 -right-25 min-w-136.5 sm:-right-60 sm:w-auto'
       />
     </SectionWrapper>
   );

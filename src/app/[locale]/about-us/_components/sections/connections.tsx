@@ -112,7 +112,7 @@ export default function ConnectionsSection() {
   return (
     <SectionWrapper
       id='connections'
-      className='sm:pb-220 pb-240 relative space-y-10 bg-surface-brand px-0 text-white sm:space-y-15'
+      className='relative space-y-10 bg-surface-brand px-0 pb-240 text-white sm:space-y-15 sm:pb-220'
     >
       <div className='space-y-8 px-3.5 text-center sm:space-y-6 lg:px-0'>
         <SectionTitle>{t('connections-title')}</SectionTitle>
@@ -122,11 +122,11 @@ export default function ConnectionsSection() {
       </div>
       <div className='absolute -bottom-64 left-0 flex w-full justify-center gap-6 sm:-bottom-44'>
         {reviews.map((column, index) => (
-          <div key={index} className='w-100 flex flex-col gap-6'>
+          <div key={index} className='flex w-100 flex-col gap-6'>
             {column.map(({ author, review }, index) => (
               <div
                 key={index}
-                className='w-75 sm:w-100 relative flex flex-col gap-6 rounded-xl bg-feature p-5 pb-7 backdrop-blur-2.5xl'
+                className='relative flex w-75 flex-col gap-6 rounded-xl bg-feature p-5 pb-7 backdrop-blur-2.5xl sm:w-100'
               >
                 <div className='flex w-full gap-3'>
                   <Image
@@ -144,7 +144,7 @@ export default function ConnectionsSection() {
                     </p>
                   </div>
                 </div>
-                <div className='gap-5.5 flex pl-2.5'>
+                <div className='flex gap-5.5 pl-2.5'>
                   <Quotes className='shrink-0' />
                   <p className='text-sm'>{review}</p>
                 </div>
