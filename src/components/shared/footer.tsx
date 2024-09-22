@@ -102,7 +102,7 @@ export default function Footer() {
             <h3 className='text-situational-secondary'>{title}</h3>
             {links.map(({ label, href }) => (
               <li key={label}>
-                <Link href={`${locale}/${href}`}>{label}</Link>
+                <Link href={`/${locale}/${href}`}>{label}</Link>
               </li>
             ))}
           </ul>
