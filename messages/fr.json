@@ -93,5 +93,21 @@
   "finish": "Terminer",
   "discard": "Jeter",
   "something-went-wrong": "Un problème s'est produit. Veuillez réessayer plus tard.",
-  "specify-reason": "Je le ferai plus tard"
+  "specify-reason": "Je le ferai plus tard",
+  "journey-title": "La voie du bien-être avec Gondli",
+  "journey-description": "Gondli est une plateforme innovante conçue pour révolutionner l'industrie du bien-être en offrant aux demandeurs de bien-être et aux prestataires de services une expérience transparente et enrichissante. Notre mission est d'améliorer le parcours vers une meilleure santé et un meilleur bien-être en connectant les individus avec des services de premier ordre et en permettant aux prestataires d'atteindre leurs clients idéaux. Nous pensons que le bien-être est un voyage profondément personnel et qu'avec les bons outils, les bonnes ressources et les bonnes connexions, chacun peut parvenir à une vie plus saine et plus équilibrée.",
+  "distinctive-title": "Ce qui nous distingue",
+  "distinctive-description": "Nous nous efforçons de créer des liens significatifs et un fort sentiment d'appartenance à la communauté. Notre objectif est d'aider les individus à trouver les services de bien-être appropriés tout en donnant aux prestataires les moyens de réussir à l'ère numérique. Voici ce qui nous différencie :",
+  "distinctive-locality-title": "Expertise du marché local",
+  "distinctive-locality-description": "Nous mettons les utilisateurs en contact avec des fournisseurs de services de bien-être locaux et fiables, en veillant à ce qu'ils aient accès à des services pratiques et de haute qualité au sein de leur propre communauté. Cette approche locale permet de créer des connexions plus solides et plus fiables et de garantir que le bien-être est accessible à tous.",
+  "distinctive-empowerment-title": "Soutien à la clientèle et autonomisation des prestataires de services",
+  "distinctive-empowerment-description": "Nous fournissons aux prestataires de services de bien-être les outils dont ils ont besoin pour réussir. De la gestion facile des services à l'amélioration de la visibilité, Gondli permet aux prestataires de rationaliser leurs opérations et de se concentrer sur la fourniture de soins exceptionnels à leurs clients. Ce souci d'autonomisation des prestataires nous permet de créer un écosystème florissant de services de bien-être.",
+  "distinctive-trust-title": "Confiance et assurance qualité",
+  "distinctive-trust-description": "Gondli met l'accent sur la confiance et la qualité. Grâce à notre solide système d'examen et de vérification, les utilisateurs peuvent être sûrs que les services qu'ils reçoivent répondent à des normes élevées. Cela crée un parcours de bien-être plus sûr et plus fiable pour tous les participants.",
+  "connections-title": "Créer des liens authentiques en matière de bien-être",
+  "connections-description": "Nous pensons que le changement commence de l'intérieur. En favorisant des relations authentiques entre les personnes en quête de bien-être et les prestataires, nous visons à créer une communauté prospère qui encourage l'amélioration de soi, la pleine conscience et le bien-être collectif. Notre plateforme offre une gamme de fonctionnalités conçues pour faciliter ce voyage, de la gestion rationalisée des services pour les fournisseurs aux expériences personnalisées pour les utilisateurs.",
+  "movement-title": "Rejoindre le mouvement",
+  "movement-description": "Gondli n'est pas seulement une plateforme, c'est un mouvement vers un monde plus attentif, plus équilibré et plus connecté. Que vous soyez un prestataire de services cherchant à étendre sa portée ou un particulier à la recherche des meilleurs services de bien-être, Gondli vous offre les solutions dont vous avez besoin pour réussir. Nous vous invitons à rejoindre notre communauté dès aujourd'hui et à commencer votre voyage vers une meilleure qualité de vie.",
+  "get-started": "Commencer",
+  "explore-listing": "Explorer la liste"
 }
