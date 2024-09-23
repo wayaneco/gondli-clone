@@ -8,3 +8,4 @@ export { default as XMini } from './x-mini.svg';
 export { default as Check } from './check.svg';
 export { default as CheckCircle } from './check-circle.svg';
 export { default as Quotes } from './quotes.svg';
+export { default as Search } from './search.svg';

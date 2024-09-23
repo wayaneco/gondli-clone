@@ -14,3 +14,11 @@ export interface SurveyQuestions {
     'Business Owner': SurveyQuestion[];
   };
 }
+
+export type Categories = {
+  id: number;
+  slug: string;
+  name: string;
+  updated_at: string;
+  created_at: string;
+}[];

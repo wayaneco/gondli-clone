@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -24,11 +26,12 @@ const inputVariants = cva(
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
+  Icon?: any;
   submitButton?: ButtonProps;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, variant, submitButton, ...props }, ref) => {
+  ({ className, type, variant, Icon, submitButton, ...props }, ref) => {
     const buttonRef = React.useRef<HTMLButtonElement>(null);
     const [buttonWidth, setButtonWidth] = React.useState(0);
 
@@ -46,9 +49,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             'rounded-xl border border-transparent bg-surface-primary bg-clip-padding after:absolute after:-inset-px after:-z-10 after:rounded-xl after:bg-border-primary focus-within:shadow-input-form focus-within:after:bg-button-default',
         )}
       >
+        {Icon && (
+          <Icon className='absolute left-5 top-1/2 z-10 size-3.625 -translate-y-1/2 sm:size-6' />
+        )}
         <input
           type={type}
-          className={cn(inputVariants({ variant, className }))}
+          className={cn(
+            inputVariants({ variant, className }),
+            Icon && 'pl-12 sm:pl-14',
+          )}
           style={
             submitButton
               ? {
@@ -62,9 +71,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {submitButton && (
           <Button
             type='submit'
-            className='absolute right-1 top-1 sm:right-1.5 sm:top-1.5'
             ref={buttonRef}
             {...submitButton}
+            className={cn(
+              'absolute right-1 top-1 sm:right-1.5 sm:top-1.5',
+              submitButton.className,
+            )}
           />
         )}
         {(!variant || variant === 'default') && (

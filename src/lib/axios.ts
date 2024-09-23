@@ -22,7 +22,7 @@ axios.interceptors.request.use((config) => {
   const { NEXT_LOCALE } = cookie.parse(document.cookie);
 
   if (NEXT_LOCALE) {
-    config.baseURL = `${apiURL}/api/${NEXT_LOCALE}/v1`;
+    config.baseURL = `${apiURL}/api/v1/${NEXT_LOCALE}`;
   }
 
   return config;
