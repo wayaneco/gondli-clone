@@ -1,6 +1,8 @@
 export { default as Menu } from './menu.svg';
 export { default as ChevronLeft } from './chevron-left.svg';
+export { default as ChevronDoubleLeft } from './chevron-double-left.svg';
 export { default as ChevronRight } from './chevron-right.svg';
+export { default as ChevronDoubleRight } from './chevron-double-right.svg';
 export { default as Globe } from './globe.svg';
 export { default as X } from './x.svg';
 export { default as XCircle } from './x-circle.svg';

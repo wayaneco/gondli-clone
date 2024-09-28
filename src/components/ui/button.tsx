@@ -14,6 +14,8 @@ const buttonVariants = cva(
           'bg-button-default text-white disabled:bg-button-disabled disabled:bg-none disabled:text-text-disabled',
         outline:
           'border-1.5 border-transparent bg-surface-primary bg-clip-padding after:absolute after:-inset-px.5 after:-z-10 after:rounded-full after:bg-button-default',
+        pagination:
+          'rounded-md border border-border-primary bg-surface-primary',
       },
       size: {
         default: 'px-3.5 py-2.5 text-sm sm:h-13 sm:px-6 sm:py-2 sm:text-base',
@@ -21,6 +23,7 @@ const buttonVariants = cva(
         sm: 'px-5 py-3.5 text-sm sm:py-3 sm:text-base',
         xs: 'h-10 px-6 text-sm',
         icon: 'p-1.75',
+        pagination: 'size-10 text-sm',
       },
     },
     defaultVariants: {

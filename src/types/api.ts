@@ -22,3 +22,34 @@ export type Categories = {
   updated_at: string;
   created_at: string;
 }[];
+
+export interface Blog {
+  data: {
+    thumbnail: string;
+    category: string;
+    title: string;
+    body: string;
+    images: string[];
+    tags: string[];
+  }[];
+  links: {
+    first: string;
+    last: string;
+    prev: string | null;
+    next: string | null;
+  };
+  meta: {
+    path: string;
+    total: number;
+    from: number;
+    to: number;
+    per_page: number;
+    last_page: number;
+    current_page: number;
+    links: {
+      url: string | null;
+      label: string;
+      active: boolean;
+    }[];
+  };
+}

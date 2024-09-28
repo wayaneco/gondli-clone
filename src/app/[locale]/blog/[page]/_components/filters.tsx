@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useMediaQuery } from 'react-responsive';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -7,7 +8,7 @@ import { useQueryState, parseAsArrayOf, parseAsInteger } from 'nuqs';
 import useSWR from 'swr';
 import { SectionWrapper, SectionTitle } from '@/components/shared/section';
 import { Input } from '@/components/ui/input';
-import { Category } from './category';
+import { Category } from '@/components/shared/category';
 import { Search } from '@/icons';
 import { axios } from '@/lib/axios';
 import { cn, handleError } from '@/lib/utils';
@@ -16,20 +17,24 @@ import { Categories } from '@/types/api';
 export function BlogFilters() {
   const t = useTranslations();
 
-  const isMobile = useMediaQuery({
+  const { register, handleSubmit } = useForm();
+
+  const [isMobile, setIsMobile] = useState<boolean>();
+
+  const isMobileQuery = useMediaQuery({
     maxWidth: '640px',
   });
+
+  const { data: categories } = useSWR('/category', (url) =>
+    axios.get<Categories>(url).then((res) => res.data),
+  );
 
   const [_, setSearch] = useQueryState('search');
   const [activeCategories, setActiveCategories] = useQueryState(
     'category_ids[]',
-    parseAsArrayOf(parseAsInteger),
-  );
-
-  const { register, handleSubmit } = useForm();
-
-  const { data: categories } = useSWR('/category', (url) =>
-    axios.get<Categories>(url).then((res) => res.data),
+    parseAsArrayOf(parseAsInteger)
+      .withDefault([])
+      .withOptions({ clearOnDefault: true }),
   );
 
   const submitHandler: SubmitHandler<{
@@ -42,6 +47,10 @@ export function BlogFilters() {
     }
   };
 
+  useEffect(() => {
+    setIsMobile(isMobileQuery);
+  }, [isMobileQuery]);
+
   return (
     <SectionWrapper className='flex flex-col items-center gap-15 bg-surface-brand text-white sm:gap-20'>
       <SectionTitle>{t('blog-title')}</SectionTitle>
@@ -51,14 +60,18 @@ export function BlogFilters() {
             Icon={Search}
             placeholder={t('blog-search-placeholder')}
             autoComplete='off'
-            submitButton={{
-              className: cn(isMobile && 'size-10'),
-              children: isMobile ? (
-                <Search className='size-3.625' />
-              ) : (
-                t('blog-search-button')
-              ),
-            }}
+            submitButton={
+              typeof isMobile !== 'undefined'
+                ? {
+                    className: cn(isMobile && 'size-10'),
+                    children: isMobile ? (
+                      <Search className='size-3.625' />
+                    ) : (
+                      t('blog-search-button')
+                    ),
+                  }
+                : undefined
+            }
             {...register('search')}
           />
         </form>

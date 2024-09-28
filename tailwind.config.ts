@@ -38,7 +38,9 @@ const config = {
         '100': '25rem',
         '86.25': '21.563rem',
         '75': '18.75rem',
+        '65.75': '16.4375rem',
         '57.5': '14.375rem',
+        '41': '10.25rem',
         '39.25': '9.798rem',
         '35.5': '8.875rem',
         '33': '8.25rem',
@@ -99,6 +101,9 @@ const config = {
       borderRadius: {
         '1.5sm': '0.25rem',
         '1.5lg': '0.625rem',
+      },
+      gridTemplateColumns: {
+        'blog-listing': 'repeat(auto-fill, minmax(17.5rem, 1fr))',
       },
       boxShadow: {
         'input-form': '0px 0px 0px 3px #E7F3E8',

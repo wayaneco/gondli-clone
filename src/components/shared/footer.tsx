@@ -25,7 +25,7 @@ export default function Footer() {
         },
         {
           label: t('our-blog'),
-          href: '/blog',
+          href: '/blog/1',
         },
       ],
     },
