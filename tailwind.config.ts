@@ -38,10 +38,13 @@ const config = {
         '100': '25rem',
         '86.25': '21.563rem',
         '75': '18.75rem',
+        '73.25': '18.3125rem',
         '65.75': '16.4375rem',
         '57.5': '14.375rem',
+        '45.75': '11.4375rem',
         '41': '10.25rem',
         '39.25': '9.798rem',
+        '36.25': '9.0625rem',
         '35.5': '8.875rem',
         '33': '8.25rem',
         '30': '7.5rem',
@@ -104,6 +107,7 @@ const config = {
       },
       gridTemplateColumns: {
         'blog-listing': 'repeat(auto-fill, minmax(17.5rem, 1fr))',
+        'recommended-posts': 'repeat(auto-fill, minmax(15rem, 1fr))',
       },
       boxShadow: {
         'input-form': '0px 0px 0px 3px #E7F3E8',
@@ -148,7 +152,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 } satisfies Config;
 
 export default config;

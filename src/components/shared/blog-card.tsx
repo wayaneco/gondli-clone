@@ -3,21 +3,30 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
+import { cn } from '@/lib/utils';
 
 export interface BlogCardProps {
   thumbnail: string;
   category: string;
   title: string;
-  index?: number;
+  className?: string;
 }
 
-export function BlogCard({ index, thumbnail, category, title }: BlogCardProps) {
+export function BlogCard({
+  thumbnail,
+  category,
+  title,
+  className,
+}: BlogCardProps) {
   const locale = useLocale();
 
   return (
     <Link
-      href={`/${locale}/blog/${index}`}
-      className='flex h-65.75 w-full flex-col overflow-hidden rounded-2xl border border-border-primary bg-white'
+      href={`/${locale}/blog/post/slug`}
+      className={cn(
+        'flex h-65.75 w-full flex-col overflow-hidden rounded-2xl border border-border-primary bg-white',
+        className,
+      )}
     >
       <Image
         src={thumbnail}
