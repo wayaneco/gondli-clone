@@ -24,8 +24,9 @@ export function BlogListing() {
   return (
     <div className='space-y-10 px-3.75 py-15 sm:space-y-15 sm:px-25'>
       <div className='grid w-full grid-cols-blog-listing gap-6'>
-        {blog?.data.map(({ thumbnail, category, title }, index) => (
+        {blog?.data.map(({ slug, thumbnail, category, title }, index) => (
           <BlogCard
+            slug={slug}
             thumbnail={thumbnail}
             category={category}
             title={title}

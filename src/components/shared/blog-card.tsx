@@ -6,6 +6,7 @@ import { useLocale } from 'next-intl';
 import { cn } from '@/lib/utils';
 
 export interface BlogCardProps {
+  slug: string;
   thumbnail: string;
   category: string;
   title: string;
@@ -13,6 +14,7 @@ export interface BlogCardProps {
 }
 
 export function BlogCard({
+  slug,
   thumbnail,
   category,
   title,
@@ -22,7 +24,7 @@ export function BlogCard({
 
   return (
     <Link
-      href={`/${locale}/blog/post/slug`}
+      href={`/${locale}/blog/post/${slug}`}
       className={cn(
         'flex h-65.75 w-full flex-col overflow-hidden rounded-2xl border border-border-primary bg-white',
         className,

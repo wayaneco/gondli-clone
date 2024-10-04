@@ -25,6 +25,7 @@ export type Categories = {
 
 export interface Blog {
   data: {
+    slug: string;
     thumbnail: string;
     category: string;
     title: string;

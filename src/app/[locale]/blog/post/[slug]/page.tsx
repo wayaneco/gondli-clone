@@ -9,18 +9,20 @@ import { Blog } from '@/types/api';
 import { MountainsShape } from '@/shapes';
 import { BlogCard } from '@/components/shared/blog-card';
 
-export default function BlogPost() {
+export default function BlogPost({ params }: { params: { slug: string } }) {
   const t = useTranslations();
 
-  const { data } = useSWR('/blog', (url: string) =>
-    axios.get<Blog>(url).then((res) => res.data.data[0]),
+  const { data } = useSWR(`/blog/${params.slug}`, (url: string) =>
+    axios.get<{ data: Blog['data'][0] }>(url).then((res) => res.data.data),
   );
 
   const { data: recommended } = useSWR(['/blog', 'recommended'], ([url]) =>
-    axios.get<Blog>(url).then((res) => res.data.data.slice(0, 3)),
+    axios
+      .get<Blog>(url)
+      .then((res) =>
+        res.data.data.filter(({ slug }) => slug !== params.slug).slice(0, 3),
+      ),
   );
-
-  console.log(recommended);
 
   if (!data) return;
 
@@ -62,8 +64,9 @@ export default function BlogPost() {
             {t('might-interest-you')}
           </p>
           <div className='grid w-full grid-cols-recommended-posts gap-6'>
-            {recommended?.map(({ thumbnail, category, title }, index) => (
+            {recommended?.map(({ slug, thumbnail, category, title }, index) => (
               <BlogCard
+                slug={slug}
                 thumbnail={thumbnail}
                 category={category}
                 title={title}
