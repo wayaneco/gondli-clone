@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import Head from 'next/head'; // Import Head component
 import localFont from '@next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -59,6 +60,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className='scroll-smooth'>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Script
         id='gtm-script'
         strategy='afterInteractive'
