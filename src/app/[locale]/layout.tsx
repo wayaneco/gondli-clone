@@ -61,7 +61,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className='scroll-smooth'>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Script
         id='gtm-script'
