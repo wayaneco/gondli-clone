@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { glob } from 'glob';
+import { promises as fs } from 'fs';
+import path from 'path';
 import { cn } from '@/lib/utils';
 
 const COLUMNS = {
@@ -55,20 +57,23 @@ function Columns({
 }
 
 export default async function HeroBackground() {
-  const images = await glob('public/images/hero/*.{png,jpg,jpeg}');
+  const imagesPath = path.join(process.cwd(), 'public/images/hero');
+  const images = await fs.readdir(imagesPath);
 
   const columns: string[][] = Array.from(
     { length: COLUMNS.length.base },
-    () => [],
+    () => []
   );
   const columnsMobile: string[][] = Array.from(
     { length: COLUMNS.length.mobile },
-    () => [],
+    () => []
   );
 
   images.forEach((filename, index) => {
-    columns[index % COLUMNS.length.base].push(filename);
-    columnsMobile[index % COLUMNS.length.mobile].push(filename);
+    // Add leading slash to the image path and ensure it's using forward slashes
+    const imagePath = `/images/hero/${filename.replace(/\\/g, '/')}`;
+    columns[index % COLUMNS.length.base].push(imagePath);
+    columnsMobile[index % COLUMNS.length.mobile].push(imagePath);
   });
 
   return (
