@@ -61,11 +61,11 @@ export default async function HeroBackground() {
 
   const columns: string[][] = Array.from(
     { length: COLUMNS.length.base },
-    () => []
+    () => [],
   );
   const columnsMobile: string[][] = Array.from(
     { length: COLUMNS.length.mobile },
-    () => []
+    () => [],
   );
 
   images.forEach((filename, index) => {
