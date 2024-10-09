@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { glob } from 'glob';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { cn } from '@/lib/utils';
