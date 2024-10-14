@@ -20,3 +20,29 @@
     -webkit-mask-composite: xor;
   }
 }
+
+@font-face {
+  font-family: 'Futura-Regular';
+  src: url(../../public/fonts/Futura-Regular.ttf);
+}
+
+body{
+  font-family: 'Futura-Regular';
+}
+.container {
+  max-width: 1408px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+@media screen and (max-width: 1600px) {
+  .container {
+    max-width: 1230px;
+  }
+  
+}
+.container:after {
+  display: block;
+  clear: both;
+  content: "";
+}

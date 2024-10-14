@@ -1,0 +1,49 @@
+
+  
+  .language-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+  }
+  
+  .language-options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .language-option {
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px; /* Space for custom styling */
+  }
+  
+  .language-option input {
+    position: absolute;
+    opacity: 0; /* Hide the default radio button */
+  }
+  
+  .language-option.selected {
+    font-weight: bold; /* Bold text for the selected option */
+    color: #007bff; /* Change text color for selected option */
+  }
+  
+  .language-option:hover {
+    color: #0056b3; /* Darker color on hover */
+  }
+  
+  .change-language-button {
+    background-color: #4caf50; /* Green background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .change-language-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

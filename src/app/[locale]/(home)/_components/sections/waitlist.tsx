@@ -21,7 +21,7 @@ export default function WaitlistSection() {
       </div>
       <div className='relative'>
         <Image
-          src={'/images/TASKS_DEUTSCH.png'}
+          src={'/images/tasks.png'}
           alt='tasks'
           width={4960}
           height={3524}

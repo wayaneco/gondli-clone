@@ -1,40 +1,16 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import Head from 'next/head'; // Import Head component
-import localFont from '@next/font/local';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Toaster } from '@/components/ui/sonner';
 import ComingSoon from '@/components/shared/coming-soon';
 import Header from '@/components/shared/header';
-import Footer from '@/components/shared/footer';
+// import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../globals.css';
 
-const gilroy = localFont({
-  src: [
-    {
-      path: '../../../public/fonts/gilroy-light.ttf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/fonts/gilroy-regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/fonts/gilroy-medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../../public/fonts/gilroy-black.ttf',
-      weight: '900',
-      style: 'normal',
-    },
-  ],
-});
 
 const isComingSoon = process.env.NEXT_PUBLIC_APP_MODE === 'coming-soon';
 
@@ -78,8 +54,7 @@ export default async function RootLayout({
       />
       <body
         className={cn(
-          'bg-surface-primary leading-snug sm:leading-none',
-          gilroy.className,
+          'bg-surface-primary leading-snug sm:leading-none'
         )}
       >
         <noscript>
@@ -97,10 +72,10 @@ export default async function RootLayout({
             <>
               <Header />
               <div className='min-h-screen'>{children}</div>
-              <Footer />
+              {/* <Footer /> */}
             </>
           )}
-          <Toaster className={gilroy.className} />
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

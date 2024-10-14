@@ -1,87 +1,64 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { Menu } from '@/icons';
-import { Button } from '@/components/ui/button';
+'use client';
 
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation'; // Use usePathname instead of useRouter
+import { Menu } from '@/icons';
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
   SheetTitle,
   SheetDescription,
-  SheetClose,
 } from '@/components/ui/sheet';
+import HeaderInput from '../headerComponents/HeaderInput/HeaderInput';
+import SocialIcons from '../headerComponents/SocialIcons/SocialIcons';
 
 export default function Header() {
   const t = useTranslations();
+  const pathname = usePathname(); // Use usePathname to get the current route
 
-  const navigation = [
-    {
-      href: '/#explore',
-      label: t('explore'),
-    },
-    {
-      href: '/#features',
-      label: t('features'),
-    },
-    {
-      href: '/#solutions',
-      label: t('solutions'),
-    },
-    {
-      href: '/#testimonials',
-      label: t('testimonials'),
-    },
-  ];
+  // Check if the current route is the home page
+  const isHomePage = pathname === '/en';
 
   return (
-    <header className='fixed top-0 z-30 flex h-16.75 w-full items-center justify-between gap-5 bg-surface-brand px-3.75 sm:h-18.5 lg:px-25'>
-      <div className='w-full'>
-        <Image
-          src={'/images/logo/index.svg'}
-          alt='logo'
-          priority
-          width={101}
-          height={22}
-          className='h-4.5 w-auto sm:h-auto'
-        />
-      </div>
-      <nav className='hidden lg:block'>
-        <ul className='flex gap-10 text-nowrap text-white'>
-          {navigation.map(({ href, label }) => (
-            <li key={href}>
-              <Link href={href}>{label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className='flex w-full justify-end gap-5'>
-        <Link href='/#waitlist'>
-          <Button>{t('join-waitlist')}</Button>
-        </Link>
-        <Sheet>
-          <SheetTrigger>
-            <Menu className='text-white lg:hidden' />
-          </SheetTrigger>
-          <SheetContent side={'top'}>
-            <nav>
-              <ul className='flex flex-col gap-7 text-nowrap text-white'>
-                {navigation.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link href={href}>
-                      <SheetClose>{label}</SheetClose>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+    <header className='fixed top-0 z-30 w-full bg-surface-brand'>
+      <div className="container">
+        <div className="flex items-center justify-between gap-2 h-16.75 sm:h-18.5">
+          <div className='w-auto'>
+            <Image
+              src={'/images/logo/index.svg'}
+              alt='logo'
+              priority
+              width={101}
+              height={22}
+              className='h-4.5 w-auto sm:h-auto'
+            />
+          </div>
+
+          {/* Conditionally render the nav only if not on the home page */}
+          {!isHomePage && (
+            <nav className='hidden lg:block'>
+              <HeaderInput />
             </nav>
-            <SheetTitle>Header Navigation</SheetTitle>
-            <SheetDescription>
-              The main navigation of the page.
-            </SheetDescription>
-          </SheetContent>
-        </Sheet>
+          )}
+
+          <div className='flex w-full justify-end gap-2'>
+            <SocialIcons />
+            <Sheet>
+              <SheetTrigger>
+                <Menu className='text-white lg:hidden' />
+              </SheetTrigger>
+              <SheetContent side={'top'}>
+                <HeaderInput />
+                <SheetTitle>Header Navigation</SheetTitle>
+                <SheetDescription>
+                  The main navigation of the page.
+                </SheetDescription>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
       </div>
     </header>
   );
