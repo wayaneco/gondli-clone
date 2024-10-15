@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import Head from 'next/head'; // Import Head component
@@ -6,7 +7,7 @@ import { getMessages } from 'next-intl/server';
 import { Toaster } from '@/components/ui/sonner';
 import ComingSoon from '@/components/shared/coming-soon';
 import Header from '@/components/shared/header';
-// import Footer from '@/components/shared/footer';
+import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../globals.css';
@@ -72,7 +73,7 @@ export default async function RootLayout({
             <>
               <Header />
               <div className='min-h-screen'>{children}</div>
-              {/* <Footer /> */}
+              <Footer />
             </>
           )}
           <Toaster />

@@ -46,3 +46,16 @@ body{
   clear: both;
   content: "";
 }
+@media screen and (max-width: 767px) {
+  .logoWrap{
+    width: auto;
+  }
+  .logoWrap img{
+    height: 30px;
+  }
+}
+@media screen and (max-width: 1200px) {
+.headerSearch .headerInput{
+  min-width: 400px;
+}  
+}

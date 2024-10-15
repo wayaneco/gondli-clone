@@ -1,12 +1,14 @@
 import React from 'react';
 import './HeaderInput.scss';
+import Image from 'next/image';
 
 const HeaderInput: React.FC = () => {
   return (
     <React.Fragment>
       <div className="headerInput">
-        <img src="/images/home/SearchOutline.svg" alt="SearchOutline" />
+        <Image width={24} height={24} src="/images/home/SearchOutline.svg" alt="SearchOutline" />
         <input
+          spellCheck='false'
           type="text"
           placeholder="Enter service, location, or therapist"
         />
