@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Image from 'next/image';
 
 interface SlideData {
   title: string;
@@ -96,8 +97,8 @@ const ExploreDeals: React.FC = () => {
         <SwiperSlide key={index} className="swiper-slide">
         <div className="image-wrapper">
           <div className='banner'>
-          <img className='main-img' src={item.imageSrc} alt={item.title} />
-          <img className='heart' src="/images/home/heart.svg" alt="heart" />
+          <Image width={100} height={100} className='main-img' src={item.imageSrc} alt={item.title} />
+          <Image width={32} height={32} className='heart' src="/images/home/heart.svg" alt="heart" />
           </div>
           <h2 className="slide-title">{item.title}</h2>
           <div className="additional-info">
@@ -107,7 +108,7 @@ const ExploreDeals: React.FC = () => {
                     ))}
             </div>
             <div className="info">
-             <span className='rating'><img src="/images/home/star.svg" alt="star" /> {item.rating}</span>
+             <span className='rating'><Image width={12} height={12} src="/images/home/star.svg" alt="star" /> {item.rating}</span>
              <span className='price'>{item.priceRange}</span>
             <span className='location'>{item.location}</span>
             </div>

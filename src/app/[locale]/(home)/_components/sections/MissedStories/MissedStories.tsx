@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './MissedStories.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Image from 'next/image';
 
 interface SlideData {
   title: string;
@@ -164,9 +165,9 @@ const MissedStories: React.FC = () => {
                     ))}
                   </div>
                 )}
-                <img className="main-img" src={currentImage[index]} alt={item.title} />
+                <Image width={100} height={100} className="main-img" src={currentImage[index]} alt={item.title} />
                 <div className="icon-title">
-                  <img src={item.icon} alt={item.icon} />
+                  <Image width={100} height={100} src={item.icon} alt={item.icon} />
                   <h2 className="slide-title">{item.title}</h2>
                 </div>
               </div>

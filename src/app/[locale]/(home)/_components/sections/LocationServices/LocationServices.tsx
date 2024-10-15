@@ -1,6 +1,6 @@
 import React from 'react';
 import './LocationServices.scss';
-
+import Image from 'next/image';
 const LocationServices: React.FC = () => {
   return (
     <React.Fragment>
@@ -14,7 +14,7 @@ const LocationServices: React.FC = () => {
       }}>
         <div className="container">
             <div className="content">
-                <img src="/images/home/LocationMarker.svg" alt="LocationMarker" />
+            <Image width={60} height={60} src="/images/home/LocationMarker.svg" alt="LocationMarker" />
                 <h2>Turn on Location Services</h2>
                 <p>Activate location services to discover the well-being you been always looking for - right next to your home.</p>
                 <div className="buttons">

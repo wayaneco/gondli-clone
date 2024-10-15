@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation'; // Use usePathname instead of useRouter
+// import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { Menu } from '@/icons';
 import {
   Sheet,
@@ -15,8 +15,7 @@ import HeaderInput from '../headerComponents/HeaderInput/HeaderInput';
 import SocialIcons from '../headerComponents/SocialIcons/SocialIcons';
 
 export default function Header() {
-  const t = useTranslations();
-  const pathname = usePathname(); // Use usePathname to get the current route
+  const pathname = usePathname();
 
   // Check if the current route is the home page
   const isHomePage = pathname === '/en';
@@ -25,7 +24,7 @@ export default function Header() {
     <header className='fixed top-0 z-30 w-full bg-surface-brand'>
       <div className="container">
         <div className="flex items-center justify-between gap-2 h-16.75 sm:h-18.5">
-          <div className='w-auto'>
+          <div className='w-full logoWrap'>
             <Image
               src={'/images/logo/index.svg'}
               alt='logo'
@@ -35,11 +34,12 @@ export default function Header() {
               className='h-4.5 w-auto sm:h-auto'
             />
           </div>
-
-          {/* Conditionally render the nav only if not on the home page */}
+          
           {!isHomePage && (
             <nav className='hidden lg:block'>
+              <div className="headerSearch">
               <HeaderInput />
+              </div>
             </nav>
           )}
 

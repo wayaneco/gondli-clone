@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import './LanguageModal.scss'; // CSS for custom styles
+import './LanguageModal.scss';
+import Image from 'next/image';
 
 interface LanguageModalProps {
   show: boolean;
@@ -12,21 +13,27 @@ interface LanguageModalProps {
 const LanguageModal: React.FC<LanguageModalProps> = ({
   show,
   onClose,
-  selectedLanguage,
+  selectedLanguage = 'English (United States)',
   handleLanguageChange,
 }) => {
   return (
     <Modal show={show} onHide={onClose} centered className="language-modal">
       <Modal.Header closeButton>
-        <Modal.Title>Select Language</Modal.Title>
+        <Modal.Title>
+          <Image src="/images/logo/dark.svg" width={85} height={20} alt="logo" />
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        <div className="text-center">
+        <h2 className="language-title">Select Language</h2>
         <p className="language-description">
           Choose your preferred language for Gondli
         </p>
+        </div>
         <div className="language-options">
           <label className={`language-option ${selectedLanguage === 'English (United States)' ? 'selected' : ''}`}>
             <input
+            spellCheck='false'
               type="radio"
               name="language"
               value="English (United States)"
@@ -37,6 +44,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
           </label>
           <label className={`language-option ${selectedLanguage === 'Deutsch (German)' ? 'selected' : ''}`}>
             <input
+            spellCheck='false'
               type="radio"
               name="language"
               value="Deutsch (German)"
@@ -47,6 +55,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
           </label>
           <label className={`language-option ${selectedLanguage === 'Français (French)' ? 'selected' : ''}`}>
             <input
+            spellCheck='false'
               type="radio"
               name="language"
               value="Français (French)"
@@ -57,6 +66,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
           </label>
           <label className={`language-option ${selectedLanguage === 'Italiano (Italian)' ? 'selected' : ''}`}>
             <input
+            spellCheck='false'
               type="radio"
               name="language"
               value="Italiano (Italian)"
@@ -67,11 +77,9 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
           </label>
         </div>
       </Modal.Body>
-      <Modal.Footer>
         <button className="change-language-button" onClick={onClose}>
           Change Language
         </button>
-      </Modal.Footer>
     </Modal>
   );
 };

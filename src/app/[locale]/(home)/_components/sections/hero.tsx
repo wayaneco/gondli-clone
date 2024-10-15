@@ -1,14 +1,11 @@
-import { useTranslations } from 'next-intl';
 import {
   SectionWrapper,
   SectionDescription,
 } from '@/components/shared/section';
 import HeroBackground from './hero-background';
-import JoinWaitlist from '../join-waitlist';
 import HeaderInput from '@/components/headerComponents/HeaderInput/HeaderInput';
 
 export default function HeroSection() {
-  const t = useTranslations();
 
   return (
     <div className='relative w-full overflow-hidden'>

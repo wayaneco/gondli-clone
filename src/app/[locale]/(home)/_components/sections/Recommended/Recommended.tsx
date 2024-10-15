@@ -2,6 +2,7 @@
 
 import React from 'react';
 import './Recommended.scss';
+import Image from 'next/image';
 
 interface SlideData {
   title: string;
@@ -151,15 +152,15 @@ const Recommended: React.FC = () => {
       <div className="container">
         <div className="title">
           <h2>Recommended For You</h2>
-          <button><img src="/images/home/filter.svg" alt="filter" /> Filter</button>
+          <button><Image width={20} height={20} src="/images/home/filter.svg" alt="filter" /> Filter</button>
         </div>
        <div className="row">
        {slideData.map((item, index) => (
         <div key={index} className="col-lg-3 col-md-4 px-2 mb-4 md-mb-5">
         <div className="image-wrapper">
           <div className='banner'>
-          <img className='main-img' src={item.imageSrc} alt={item.title} />
-          <img className='heart' src="/images/home/heart.svg" alt="heart" />
+          <Image width={100} height={100} className='main-img' src={item.imageSrc} alt={item.title} />
+          <Image width={32} height={32} className='heart' src="/images/home/heart.svg" alt="heart" />
           </div>
           <h2 className="slide-title">{item.title}</h2>
           <div className="additional-info">
@@ -169,7 +170,7 @@ const Recommended: React.FC = () => {
                     ))}
             </div>
             <div className="info">
-             <span className='rating'><img src="/images/home/star.svg" alt="star" /> {item.rating}</span>
+             <span className='rating'><Image width={12} height={12} src="/images/home/star.svg" alt="star" /> {item.rating}</span>
              <span className='price'>{item.priceRange}</span>
             <span className='location'>{item.location}</span>
             </div>
