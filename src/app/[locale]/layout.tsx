@@ -5,12 +5,11 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Toaster } from '@/components/ui/sonner';
 import ComingSoon from '@/components/shared/coming-soon';
-import Header from '@/components/shared/header';
-// import Footer from '@/components/shared/footer';
+import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../globals.css';
-
+import HeaderSelector from './HeaderSelector'; // Import HeaderSelector
 
 const isComingSoon = process.env.NEXT_PUBLIC_APP_MODE === 'coming-soon';
 
@@ -52,11 +51,7 @@ export default async function RootLayout({
             `,
         }}
       />
-      <body
-        className={cn(
-          'bg-surface-primary leading-snug sm:leading-none'
-        )}
-      >
+      <body className={cn('bg-surface-primary leading-snug sm:leading-none')}>
         <noscript>
           <iframe
             src='https://www.googletagmanager.com/ns.html?id=GTM-PLM7GFXG'
@@ -70,9 +65,9 @@ export default async function RootLayout({
             <ComingSoon />
           ) : (
             <>
-              <Header />
+              <HeaderSelector /> {/* Use HeaderSelector component */}
               <div className='min-h-screen'>{children}</div>
-              {/* <Footer /> */}
+              <Footer />
             </>
           )}
           <Toaster />

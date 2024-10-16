@@ -1,8 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Globe } from '@/icons';
-
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations();
@@ -85,7 +86,6 @@ export default function Footer() {
       ],
     },
   ];
-
   return (
     <footer className='flex w-full flex-col bg-surface-brand px-3.75 py-8 text-sm text-white sm:text-base lg:px-25'>
       <Image

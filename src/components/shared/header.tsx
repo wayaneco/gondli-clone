@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation'; // Use usePathname instead of useRouter
+// import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { Menu } from '@/icons';
 import {
   Sheet,
@@ -13,19 +13,19 @@ import {
 } from '@/components/ui/sheet';
 import HeaderInput from '../headerComponents/HeaderInput/HeaderInput';
 import SocialIcons from '../headerComponents/SocialIcons/SocialIcons';
+import { useLocale } from 'next-intl';
 
 export default function Header() {
-  const t = useTranslations();
-  const pathname = usePathname(); // Use usePathname to get the current route
-
+  const pathname = usePathname();
+  const locale = useLocale();
   // Check if the current route is the home page
-  const isHomePage = pathname === '/en';
+  const isHomePage = pathname === `/${locale}/homeSection`;
 
   return (
     <header className='fixed top-0 z-30 w-full bg-surface-brand'>
-      <div className="container">
-        <div className="flex items-center justify-between gap-2 h-16.75 sm:h-18.5">
-          <div className='w-auto'>
+      <div className='container'>
+        <div className='flex h-16.75 items-center justify-between gap-2 sm:h-18.5'>
+          <div className='logoWrap w-full'>
             <Image
               src={'/images/logo/index.svg'}
               alt='logo'
@@ -36,10 +36,11 @@ export default function Header() {
             />
           </div>
 
-          {/* Conditionally render the nav only if not on the home page */}
           {!isHomePage && (
             <nav className='hidden lg:block'>
-              <HeaderInput />
+              <div className='headerSearch'>
+                <HeaderInput />
+              </div>
             </nav>
           )}
 
