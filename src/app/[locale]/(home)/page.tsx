@@ -1,22 +1,19 @@
-import DigitalContent from './_components/sections/DigitalContent/DigitalContent';
-import ExploreDeals from './_components/sections/ExploreDeals/ExploreDeals';
 import HeroSection from './_components/sections/hero';
-import LocationServices from './_components/sections/LocationServices/LocationServices';
-import MissedStories from './_components/sections/MissedStories/MissedStories';
-import PastBooking from './_components/sections/PastBooking/PastBooking';
-import Recommended from './_components/sections/Recommended/Recommended';
-
+import ExploreSection from './_components/sections/explore';
+import FeaturesSection from './_components/sections/features';
+import SolutionsSection from './_components/sections/solutions';
+import TestimonialsSection from './_components/sections/testimonials';
+import WaitlistSection from './_components/sections/waitlist';
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <MissedStories />
-      <PastBooking />
-      <ExploreDeals />
-      <LocationServices />
-      <DigitalContent />
-      <Recommended />
+      <ExploreSection />
+      <FeaturesSection />
+      <SolutionsSection />
+      <TestimonialsSection />
+      <WaitlistSection />
     </main>
   );
 }

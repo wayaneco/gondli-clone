@@ -1,6 +1,14 @@
 .social-icons-container {
     position: relative;
     display: flex;
+    .homeLink{
+      a{
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        
+      }
+    }
     .dropdown {
       position: relative;
       display: inline-block;

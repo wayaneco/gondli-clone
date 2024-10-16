@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import Head from 'next/head'; // Import Head component
@@ -6,12 +5,11 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Toaster } from '@/components/ui/sonner';
 import ComingSoon from '@/components/shared/coming-soon';
-import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
 import { cn } from '@/lib/utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../globals.css';
-
+import HeaderSelector from './HeaderSelector'; // Import HeaderSelector
 
 const isComingSoon = process.env.NEXT_PUBLIC_APP_MODE === 'coming-soon';
 
@@ -36,13 +34,13 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className='scroll-smooth'>
+    <html lang={locale} className="scroll-smooth">
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
-        id='gtm-script'
-        strategy='afterInteractive'
+        id="gtm-script"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -53,17 +51,13 @@ export default async function RootLayout({
             `,
         }}
       />
-      <body
-        className={cn(
-          'bg-surface-primary leading-snug sm:leading-none'
-        )}
-      >
+      <body className={cn('bg-surface-primary leading-snug sm:leading-none')}>
         <noscript>
           <iframe
-            src='https://www.googletagmanager.com/ns.html?id=GTM-PLM7GFXG'
-            height='0'
-            width='0'
-            className='invisible hidden'
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PLM7GFXG"
+            height="0"
+            width="0"
+            className="invisible hidden"
           ></iframe>
         </noscript>
         <NextIntlClientProvider messages={messages}>
@@ -71,8 +65,8 @@ export default async function RootLayout({
             <ComingSoon />
           ) : (
             <>
-              <Header />
-              <div className='min-h-screen'>{children}</div>
+              <HeaderSelector /> {/* Use HeaderSelector component */}
+              <div className="min-h-screen">{children}</div>
               <Footer />
             </>
           )}
