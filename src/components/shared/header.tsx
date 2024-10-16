@@ -23,9 +23,9 @@ export default function Header() {
 
   return (
     <header className='fixed top-0 z-30 w-full bg-surface-brand'>
-      <div className="container">
-        <div className="flex items-center justify-between gap-2 h-16.75 sm:h-18.5">
-          <div className='w-full logoWrap'>
+      <div className='container'>
+        <div className='flex h-16.75 items-center justify-between gap-2 sm:h-18.5'>
+          <div className='logoWrap w-full'>
             <Image
               src={'/images/logo/index.svg'}
               alt='logo'
@@ -35,11 +35,11 @@ export default function Header() {
               className='h-4.5 w-auto sm:h-auto'
             />
           </div>
-          
+
           {!isHomePage && (
             <nav className='hidden lg:block'>
-              <div className="headerSearch">
-              <HeaderInput />
+              <div className='headerSearch'>
+                <HeaderInput />
               </div>
             </nav>
           )}

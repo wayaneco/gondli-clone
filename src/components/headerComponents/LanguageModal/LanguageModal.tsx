@@ -17,59 +17,72 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
   handleLanguageChange,
 }) => {
   return (
-    <Modal show={show} onHide={onClose} centered className="language-modal">
+    <Modal show={show} onHide={onClose} centered className='language-modal'>
       <Modal.Header closeButton>
         <Modal.Title>
-          <Image src="/images/logo/dark.svg" width={85} height={20} alt="logo" />
+          <Image
+            src='/images/logo/dark.svg'
+            width={85}
+            height={20}
+            alt='logo'
+          />
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="text-center">
-        <h2 className="language-title">Select Language</h2>
-        <p className="language-description">
-          Choose your preferred language for Gondli
-        </p>
+        <div className='text-center'>
+          <h2 className='language-title'>Select Language</h2>
+          <p className='language-description'>
+            Choose your preferred language for Gondli
+          </p>
         </div>
-        <div className="language-options">
-          <label className={`language-option ${selectedLanguage === 'English (United States)' ? 'selected' : ''}`}>
+        <div className='language-options'>
+          <label
+            className={`language-option ${selectedLanguage === 'English (United States)' ? 'selected' : ''}`}
+          >
             <input
-            spellCheck='false'
-              type="radio"
-              name="language"
-              value="English (United States)"
+              spellCheck='false'
+              type='radio'
+              name='language'
+              value='English (United States)'
               checked={selectedLanguage === 'English (United States)'}
               onChange={handleLanguageChange}
             />
             English (United States)
           </label>
-          <label className={`language-option ${selectedLanguage === 'Deutsch (German)' ? 'selected' : ''}`}>
+          <label
+            className={`language-option ${selectedLanguage === 'Deutsch (German)' ? 'selected' : ''}`}
+          >
             <input
-            spellCheck='false'
-              type="radio"
-              name="language"
-              value="Deutsch (German)"
+              spellCheck='false'
+              type='radio'
+              name='language'
+              value='Deutsch (German)'
               checked={selectedLanguage === 'Deutsch (German)'}
               onChange={handleLanguageChange}
             />
             Deutsch (German)
           </label>
-          <label className={`language-option ${selectedLanguage === 'Français (French)' ? 'selected' : ''}`}>
+          <label
+            className={`language-option ${selectedLanguage === 'Français (French)' ? 'selected' : ''}`}
+          >
             <input
-            spellCheck='false'
-              type="radio"
-              name="language"
-              value="Français (French)"
+              spellCheck='false'
+              type='radio'
+              name='language'
+              value='Français (French)'
               checked={selectedLanguage === 'Français (French)'}
               onChange={handleLanguageChange}
             />
             Français (French)
           </label>
-          <label className={`language-option ${selectedLanguage === 'Italiano (Italian)' ? 'selected' : ''}`}>
+          <label
+            className={`language-option ${selectedLanguage === 'Italiano (Italian)' ? 'selected' : ''}`}
+          >
             <input
-            spellCheck='false'
-              type="radio"
-              name="language"
-              value="Italiano (Italian)"
+              spellCheck='false'
+              type='radio'
+              name='language'
+              value='Italiano (Italian)'
               checked={selectedLanguage === 'Italiano (Italian)'}
               onChange={handleLanguageChange}
             />
@@ -77,9 +90,9 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
           </label>
         </div>
       </Modal.Body>
-        <button className="change-language-button" onClick={onClose}>
-          Change Language
-        </button>
+      <button className='change-language-button' onClick={onClose}>
+        Change Language
+      </button>
     </Modal>
   );
 };

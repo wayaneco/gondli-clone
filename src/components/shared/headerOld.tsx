@@ -14,7 +14,6 @@ import {
 } from '@/components/ui/sheet';
 import { useLocale } from 'next-intl';
 
-
 export default function Header() {
   const t = useTranslations();
   const locale = useLocale();
