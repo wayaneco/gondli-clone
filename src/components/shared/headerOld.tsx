@@ -12,11 +12,18 @@ import {
   SheetDescription,
   SheetClose,
 } from '@/components/ui/sheet';
+import { useLocale } from 'next-intl';
+
 
 export default function Header() {
   const t = useTranslations();
+  const locale = useLocale();
 
   const navigation = [
+    {
+      href: `/${locale}/homeSection`,
+      label: 'Home',
+    },
     {
       href: '/#explore',
       label: t('explore'),

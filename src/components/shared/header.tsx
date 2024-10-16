@@ -13,12 +13,13 @@ import {
 } from '@/components/ui/sheet';
 import HeaderInput from '../headerComponents/HeaderInput/HeaderInput';
 import SocialIcons from '../headerComponents/SocialIcons/SocialIcons';
+import { useLocale } from 'next-intl';
 
 export default function Header() {
   const pathname = usePathname();
-
+  const locale = useLocale();
   // Check if the current route is the home page
-  const isHomePage = pathname === '/en';
+  const isHomePage = pathname === `/${locale}/homeSection`;
 
   return (
     <header className='fixed top-0 z-30 w-full bg-surface-brand'>
