@@ -66,6 +66,7 @@
     border-radius: 100px;
     background: rgba(245, 249, 255, 1);
   }
+<<<<<<< HEAD
   &::before {
     position: absolute;
     top: -2px;
@@ -74,6 +75,17 @@
     right: -2px;
     content: '';
     z-index: -1;
+=======
+  
+  .language-option:hover {
+    color: rgba(0, 11, 25, 1);
+  }
+  
+  .change-language-button {
+    background: linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%);
+    color: #ffffff;
+    border: none;
+>>>>>>> design
     border-radius: 100px;
     background: linear-gradient(266.66deg, #5cb170 -7.81%, #d6de6d 118.14%);
   }
