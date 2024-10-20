@@ -26,7 +26,7 @@
   src: url(../../public/fonts/Futura-Regular.ttf);
 }
 
-body {
+body{
   font-family: 'Futura-Regular';
 }
 .container {
@@ -39,27 +39,22 @@ body {
   .container {
     max-width: 1230px;
   }
+  
 }
 .container:after {
   display: block;
   clear: both;
-  content: '';
+  content: "";
 }
 @media screen and (max-width: 767px) {
-  .logoWrap {
+  .logoWrap{
     width: auto;
   }
-  .logoWrap img {
+  .logoWrap img{
     height: 30px;
   }
 }
 @media screen and (max-width: 1200px) {
-<<<<<<< HEAD
-  .headerSearch .headerInput {
-    min-width: 400px;
-  }
-}
-=======
 .headerSearch .headerInput{
   min-width: 400px;
 }  
@@ -79,4 +74,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
->>>>>>> design
