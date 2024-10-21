@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useRef } from 'react';
 import './MissedStories.scss';
@@ -16,143 +16,27 @@ interface SlideData {
 }
 
 const slideData: SlideData[] = [
-  {
-    title: 'Vitra',
-    imageSrc: '/images/home/story1.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon1.svg',
-  },
-  {
-    title: 'Spa & Harmony Heights',
-    imageSrc: '/images/home/story2.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon2.svg',
-  },
-  {
-    title: 'Spa Vitality Haven',
-    imageSrc: '/images/home/story3.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon3.svg',
-  },
-  {
-    title: 'Harmony Haven',
-    imageSrc: '/images/home/story4.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon4.svg',
-  },
-  {
-    title: 'Spapure Essence',
-    imageSrc: '/images/home/story5.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon5.svg',
-  },
-  {
-    title: 'Pilates Oasis',
-    imageSrc: '/images/home/story6.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon6.svg',
-  },
-  {
-    title: 'Vitra',
-    imageSrc: '/images/home/story1.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon1.svg',
-  },
-  {
-    title: 'Spa & Harmony Heights',
-    imageSrc: '/images/home/story2.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon2.svg',
-  },
-  {
-    title: 'Spa Vitality Haven',
-    imageSrc: '/images/home/story3.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon3.svg',
-  },
-  {
-    title: 'Harmony Haven',
-    imageSrc: '/images/home/story4.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon4.svg',
-  },
-  {
-    title: 'Spapure Essence',
-    imageSrc: '/images/home/story5.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon5.svg',
-  },
-  {
-    title: 'Pilates Oasis',
-    imageSrc: '/images/home/story6.svg',
-    storyImages: [
-      '/images/home/story5.svg',
-      '/images/home/story2.svg',
-      '/images/home/story4.svg',
-    ],
-    icon: '/images/home/storyIcon6.svg',
-  },
+  { title: 'Vitra', imageSrc: '/images/home/story1.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon1.svg' },
+  { title: 'Spa & Harmony Heights', imageSrc: '/images/home/story2.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon2.svg' },
+  { title: 'Spa Vitality Haven', imageSrc: '/images/home/story3.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon3.svg' },
+  { title: 'Harmony Haven', imageSrc: '/images/home/story4.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon4.svg' },
+  { title: 'Spapure Essence', imageSrc: '/images/home/story5.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon5.svg' },
+  { title: 'Pilates Oasis', imageSrc: '/images/home/story6.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon6.svg' },
+  { title: 'Vitra', imageSrc: '/images/home/story1.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon1.svg' },
+  { title: 'Spa & Harmony Heights', imageSrc: '/images/home/story2.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon2.svg' },
+  { title: 'Spa Vitality Haven', imageSrc: '/images/home/story3.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon3.svg' },
+  { title: 'Harmony Haven', imageSrc: '/images/home/story4.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon4.svg' },
+  { title: 'Spapure Essence', imageSrc: '/images/home/story5.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon5.svg' },
+  { title: 'Pilates Oasis', imageSrc: '/images/home/story6.svg', storyImages: ['/images/home/story5.svg', '/images/home/story2.svg', '/images/home/story4.svg'], icon: '/images/home/storyIcon6.svg' },
 ];
 
 const MissedStories: React.FC = () => {
-  const [currentImage, setCurrentImage] = useState<string[]>(
-    slideData.map((item) => item.imageSrc),
-  );
+  const [currentImage, setCurrentImage] = useState<string[]>(slideData.map(item => item.imageSrc));
   const [progress, setProgress] = useState<number[]>(slideData.map(() => 0)); // Track progress
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Track hovered slide index
-  const [imgIndices, setImgIndices] = useState<number[]>(
-    slideData.map(() => 0),
-  ); // Track imgIndex for each slide
-  const [slideIntervalId, setSlideIntervalId] = useState<
-    (ReturnType<typeof setInterval> | null)[]
-  >(slideData.map(() => null));
-  const [showPagination, setShowPagination] = useState<boolean[]>(
-    slideData.map(() => false),
-  ); // Pagination visibility
+  const [imgIndices, setImgIndices] = useState<number[]>(slideData.map(() => 0)); // Track imgIndex for each slide
+  const [slideIntervalId, setSlideIntervalId] = useState<(ReturnType<typeof setInterval> | null)[]>(slideData.map(() => null));
+  const [showPagination, setShowPagination] = useState<boolean[]>(slideData.map(() => false)); // Pagination visibility
   const swiperRef = useRef<any>(null); // Store the swiper instance
 
   const startSlideShow = (index: number) => {
@@ -162,13 +46,13 @@ const MissedStories: React.FC = () => {
     const intervalId = setInterval(() => {
       imgIndex = (imgIndex + 1) % images.length;
 
-      setImgIndices((prevIndices) => {
+      setImgIndices(prevIndices => {
         const updatedIndices = [...prevIndices];
         updatedIndices[index] = imgIndex;
         return updatedIndices;
       });
 
-      setCurrentImage((prevImages) => {
+      setCurrentImage(prevImages => {
         const updatedImages = [...prevImages];
         updatedImages[index] = images[imgIndex];
         return updatedImages;
@@ -176,7 +60,7 @@ const MissedStories: React.FC = () => {
     }, 3000); // Adjust interval to match the image transition time
 
     const progressInterval = setInterval(() => {
-      setProgress((prevProgress) => {
+      setProgress(prevProgress => {
         const updatedProgress = [...prevProgress];
         updatedProgress[index] += 100 / (30 / images.length); // Dynamic progress speed based on image count
         if (updatedProgress[index] >= 100) updatedProgress[index] = 0;
@@ -189,7 +73,7 @@ const MissedStories: React.FC = () => {
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
-    setShowPagination((prev) => {
+    setShowPagination(prev => {
       const newPagination = [...prev];
       newPagination[index] = true;
       return newPagination;
@@ -197,7 +81,7 @@ const MissedStories: React.FC = () => {
 
     const { intervalId } = startSlideShow(index);
 
-    setSlideIntervalId((prev) => {
+    setSlideIntervalId(prev => {
       const newIntervals = [...prev];
       newIntervals[index] = intervalId;
       return newIntervals;
@@ -211,19 +95,19 @@ const MissedStories: React.FC = () => {
 
   const handleMouseLeave = (index: number) => {
     setHoveredIndex(null);
-    setShowPagination((prev) => {
+    setShowPagination(prev => {
       const newPagination = [...prev];
       newPagination[index] = false;
       return newPagination;
     });
 
-    setCurrentImage((prevImages) => {
+    setCurrentImage(prevImages => {
       const updatedImages = [...prevImages];
       updatedImages[index] = slideData[index].imageSrc;
       return updatedImages;
     });
 
-    setProgress((prevProgress) => {
+    setProgress(prevProgress => {
       const updatedProgress = [...prevProgress];
       updatedProgress[index] = 0;
       return updatedProgress;
@@ -238,9 +122,9 @@ const MissedStories: React.FC = () => {
   };
 
   return (
-    <div className='missedStories'>
-      <div className='container'>
-        <div className='title'>
+    <div className="missedStories">
+      <div className="container">
+        <div className="title">
           <h2>Stories You Missed</h2>
         </div>
         <Swiper
@@ -251,7 +135,7 @@ const MissedStories: React.FC = () => {
           navigation={true}
           speed={500}
           modules={[Autoplay, Navigation]}
-          className='swiper_container'
+          className="swiper_container"
           onSwiper={(swiperInstance) => {
             swiperRef.current = swiperInstance; // Store the swiper instance
             swiperInstance.autoplay.start();
@@ -264,40 +148,27 @@ const MissedStories: React.FC = () => {
           }}
         >
           {slideData.map((item, index) => (
-            <SwiperSlide key={index} className='swiper-slide'>
+            <SwiperSlide key={index} className="swiper-slide">
               <div
-                className='image-wrapper'
+                className="image-wrapper"
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={() => handleMouseLeave(index)}
               >
                 {showPagination[index] && ( // Show pagination only on hover
-                  <div className='pagination-wrapper'>
+                  <div className="pagination-wrapper">
                     {slideData[index].storyImages.map((_, i) => (
                       <div
                         key={i}
                         className={`pagination-dot ${hoveredIndex === index && i === imgIndices[index] ? 'active' : ''}`}
-                        style={{
-                          width: `${i === imgIndices[index] ? progress[index] : 100}%`,
-                        }}
+                        style={{ width: `${i === imgIndices[index] ? progress[index] : 100}%` }}
                       ></div>
                     ))}
                   </div>
                 )}
-                <Image
-                  width={100}
-                  height={100}
-                  className='main-img'
-                  src={currentImage[index]}
-                  alt={item.title}
-                />
-                <div className='icon-title'>
-                  <Image
-                    width={100}
-                    height={100}
-                    src={item.icon}
-                    alt={item.icon}
-                  />
-                  <h2 className='slide-title'>{item.title}</h2>
+                <Image width={100} height={100} className="main-img" src={currentImage[index]} alt={item.title} />
+                <div className="icon-title">
+                  <Image width={100} height={100} src={item.icon} alt={item.icon} />
+                  <h2 className="slide-title">{item.title}</h2>
                 </div>
               </div>
             </SwiperSlide>
@@ -309,3 +180,4 @@ const MissedStories: React.FC = () => {
 };
 
 export default MissedStories;
+

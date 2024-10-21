@@ -6,6 +6,7 @@ import MissedStories from './_components/sections/MissedStories/MissedStories';
 import PastBooking from './_components/sections/PastBooking/PastBooking';
 import Recommended from './_components/sections/Recommended/Recommended';
 
+
 export default function HomeSection() {
   return (
     <main>
