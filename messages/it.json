@@ -35,8 +35,8 @@
   "features-description": "e non è tutto. L'approccio innovativo di Gondli rivoluziona il modo in cui ci si cura, semplifica le decisioni che cambiano la vita e riunisce la comunità. Volete farne parte?",
   "wellness-enthusiast": "Appassionato di benessere",
   "service-provider": "Fornitore di servizi",
-  "features-search-title": "Ricerca assistita dall'intelligenza artificiale",
-  "features-search-description": "Godetevi l'accesso premium a una serie di servizi, sconti esclusivi e raccomandazioni personalizzate",
+  "features-search_en-title": "Ricerca assistita dall'intelligenza artificiale",
+  "features-search_en-description": "Godetevi l'accesso premium a una serie di servizi, sconti esclusivi e raccomandazioni personalizzate",
   "features-stories-title": "Storie per rimanere aggiornati",
   "features-stories-description": "Le sedi possono condividere aggiornamenti e approfondimenti in tempo reale, per tenervi informati e ispirati nel vostro percorso di benessere",
   "features-gamification-title": "Gamification",
@@ -109,5 +109,6 @@
   "movement-title": "Unisciti al Movimento",
   "movement-description": "Gondli non è solo una piattaforma: è un movimento verso un mondo più consapevole, equilibrato e connesso. Che siate fornitori di servizi che vogliono espandere il proprio raggio d'azione o singoli individui alla ricerca dei migliori servizi per il benessere, Gondli offre le soluzioni di cui avete bisogno per avere successo. Vi invitiamo a unirvi alla nostra comunità oggi stesso e a iniziare il vostro viaggio verso una migliore qualità della vita.",
   "get-started": "Iniziare",
-  "explore-listing": "Esplora l'elenco"
+  "explore-listing": "Esplora l'elenco",
+  "search":"search_en"
 }

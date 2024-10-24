@@ -35,8 +35,8 @@
   "features-description": "and thats not all. Gondli’s Innovative approach revolutionizes the way you treat yourself, simplifies making life-changing decisions and bringing the community together. Do you want to be a part of it?",
   "wellness-enthusiast": "Wellness Enthusiast",
   "service-provider": "Service Provider",
-  "features-search-title": "AI Assisted Search",
-  "features-search-description": "Enjoy premium access to a range of services, exclusive discounts, and personalized recommendations.",
+  "features-search_en-title": "AI Assisted Search",
+  "features-search_en-description": "Enjoy premium access to a range of services, exclusive discounts, and personalized recommendations.",
   "features-stories-title": "Stories to Stay Updated",
   "features-stories-description": "Venues can share real-time updates and insights, keeping you informed and inspired on your wellness journey.",
   "features-gamification-title": "Gamification",
@@ -117,5 +117,6 @@
   "join-gondli": "Join Gondli",
   "join-gondli-title": "So, ready to be a part of us?",
   "join-gondli-description": "Sign up for free on Gondli to explore wellness that is tailored for you.",
-  "might-interest-you": "This Might Also Interest You:"
+  "might-interest-you": "This Might Also Interest You:",
+  "search":"search_en"
 }
