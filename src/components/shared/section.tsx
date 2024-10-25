@@ -56,10 +56,6 @@ export function SectionWrapper({
       >
         {children}
       </div>
-      <SectionMountains
-        show={displayMountains}
-        className='bottom-0 right-0 sm:-bottom-12'
-      />
     </div>
   );
 }
