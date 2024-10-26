@@ -48,6 +48,10 @@ export function SectionWrapper({
       {...props}
       className={cn('relative h-full w-full overflow-hidden', bgClasses)}
     >
+      <SectionMountains
+        show={displayMountains}
+        className='left-0 top-0 rotate-180 sm:-top-12'
+      />
       <div
         className={cn(
           'relative z-10 px-3.5 pt-30 pb-15 sm:pb-20 sm:pt-30 lg:px-25',
@@ -56,6 +60,10 @@ export function SectionWrapper({
       >
         {children}
       </div>
+      <SectionMountains
+        show={displayMountains}
+        className='bottom-0 right-0 sm:-bottom-12'
+      />
     </div>
   );
 }
