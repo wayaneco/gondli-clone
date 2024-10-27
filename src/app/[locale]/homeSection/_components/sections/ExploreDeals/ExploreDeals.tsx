@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import "./ExploreDeals.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -31,6 +30,7 @@ const ExploreDeals: React.FC = () => {
   const locale = useLocale();
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState<Listing[]>([]);
+  const t = useTranslations();
 
   // Fetch data from the API
   useEffect(() => {
@@ -65,7 +65,7 @@ const ExploreDeals: React.FC = () => {
     <div className="exploreDeals">
       <div className="container">
         <div className="title">
-          <h2>Explore Deals</h2>
+          <h2>{t('explore-deals')}</h2>
         </div>
         {isLoading ? (
           <Loader className="sliderLoader" />
