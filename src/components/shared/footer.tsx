@@ -87,43 +87,43 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className='flex w-full flex-col bg-surface-brand px-3.75 py-8 text-sm text-white sm:text-base lg:px-25'>
-      <Image
-        src={'/images/logo/index.svg'}
-        alt='logo'
-        priority
-        width={82}
-        height={18}
-        className='sm:hidden'
-      />
-      <nav className='grid grid-cols-2 gap-y-11 pt-10 sm:grid-cols-4 sm:gap-x-5 sm:pt-0'>
-        {navigation.map(({ title, links }) => (
-          <ul key={title} className='space-y-3'>
-            <h3 className='text-situational-secondary'>{title}</h3>
-            {links.map(({ label, href }) => (
-              <li key={label}>
-                <Link href={`/${locale}${href}`}>{label}</Link>
-              </li>
-            ))}
-          </ul>
-        ))}
-      </nav>
-      <div className='mt-10 h-px w-full bg-situational-primary sm:mt-8' />
-      <div className='flex w-full items-center justify-between pt-5 sm:pt-8'>
-        <div className='flex items-center gap-1.5'>
-          <Globe />
-          <p>{t('switzerland')}</p>
-        </div>
+      <footer className='flex w-full flex-col bg-surface-brand px-3.75 py-8 text-sm text-white sm:text-base lg:px-25'>
         <Image
           src={'/images/logo/index.svg'}
           alt='logo'
           priority
-          width={102}
-          height={24}
-          className='hidden sm:block'
+          width={82}
+          height={18}
+          className='sm:hidden'
         />
-        <p>© 2023. {t('all-rights-reserved')}</p>
-      </div>
-    </footer>
+        <nav className='grid grid-cols-2 gap-y-11 pt-10 sm:grid-cols-4 sm:gap-x-5 sm:pt-0'>
+          {navigation.map(({ title, links }) => (
+            <ul key={title} className='space-y-3'>
+              <h3 className='text-situational-secondary'>{title}</h3>
+              {links.map(({ label, href }) => (
+                <li key={label}>
+                  <Link href={`/${locale}${href}`}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </nav>
+        <div className='mt-10 h-px w-full bg-situational-primary sm:mt-8' />
+        <div className='flex w-full items-center justify-between pt-5 sm:pt-8'>
+          <div className='flex items-center gap-1.5'>
+            <Globe />
+            <p>{t('switzerland')}</p>
+          </div>
+          <Image
+            src={'/images/logo/index.svg'}
+            alt='logo'
+            priority
+            width={102}
+            height={24}
+            className='hidden sm:block'
+          />
+          <p>© 2023. {t('all-rights-reserved')}</p>
+        </div>
+      </footer>
   );
 }

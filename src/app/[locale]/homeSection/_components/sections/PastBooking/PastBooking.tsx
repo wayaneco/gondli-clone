@@ -1,12 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PastBooking.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import Loader from '../Loader/Loader';
+import { useTranslations } from 'next-intl';
 
 interface SlideData {
   title: string;
@@ -69,81 +71,84 @@ const slideData: SlideData[] = [
 ];
 
 const PastBooking: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const t = useTranslations();
+
+  useEffect(() => {
+    // Preload images before displaying the Swiper
+    const preloadImages = () => {
+      const imagePromises = slideData.map(item => {
+        return new Promise<void>((resolve) => {
+          const img = new window.Image();
+          img.src = item.imageSrc;
+          img.onload = () => resolve();
+        });
+      });
+
+      Promise.all(imagePromises).then(() => {
+        setIsLoading(false); // Hide loader when all images are loaded
+      });
+    };
+
+    preloadImages();
+  }, []);
+
   return (
-    <div className='pastBooking'>
-      <div className='container'>
-        <div className='title'>
-          <h2>Based on Your Past Bookings</h2>
+    <div className="pastBooking">
+      <div className="container">
+        <div className="title">
+          <h2>{t('past-booking')}</h2>
         </div>
-        <Swiper
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          slidesPerView={4}
-          spaceBetween={15}
-          navigation={true}
-          speed={500}
-          modules={[Autoplay, Navigation]}
-          className='pastBookingSwiper'
-          breakpoints={{
-            1400: { slidesPerView: 4, spaceBetween: 15 },
-            1000: { slidesPerView: 4, spaceBetween: 15 },
-            600: { slidesPerView: 3, spaceBetween: 15 },
-            0: { slidesPerView: 1, spaceBetween: 10, centeredSlides: false },
-          }}
-        >
-          {slideData.map((item, index) => (
-            <SwiperSlide key={index} className='swiper-slide'>
-              <div className='image-wrapper'>
-                <div className='banner'>
-                  <Image
-                    width={100}
-                    height={100}
-                    className='main-img'
-                    src={item.imageSrc}
-                    alt={item.title}
-                  />
-                  <Image
-                    width={32}
-                    height={32}
-                    className='heart'
-                    src='/images/home/heart.svg'
-                    alt='heart'
-                  />
-                  <div className='favorite'>
-                    <Image
-                      width={32}
-                      height={32}
-                      src='/images/home/heat.svg'
-                      alt='heat'
-                    />
-                    <span>Users Favorite</span>
+
+        {isLoading ? (
+          <Loader className='sliderLoader' />
+        ) : (
+          <Swiper
+            loop={true}
+            slidesPerView={4}
+            spaceBetween={15}
+            navigation={true}
+            speed={500}
+            modules={[Navigation]}
+            className="pastBookingSwiper"
+            breakpoints={{
+              1400: { slidesPerView: 4, spaceBetween: 15 },
+              1000: { slidesPerView: 4, spaceBetween: 15 },
+              600: { slidesPerView: 3, spaceBetween: 15 },
+              0: { slidesPerView: 1, spaceBetween: 10, centeredSlides: false },
+            }}
+          >
+            {slideData.map((item, index) => (
+              <SwiperSlide key={index} className="swiper-slide">
+                <div className="image-wrapper">
+                  <div className="banner">
+                    <Image priority width={100} height={100} className='main-img' src={item.imageSrc} alt={item.title} />
+                    <Image priority width={32} height={32} className='heart' src="/images/home/heart.svg" alt="heart" />
+                    <div className="favorite">
+                      <Image priority width={32} height={32} src="/images/home/heat.svg" alt="heat" />
+                      <span>Users Favorite</span>
+                    </div>
+                  </div>
+                  <h2 className="slide-title">{item.title}</h2>
+                  <div className="additional-info">
+                    <div className="service">
+                      {item.services.map((service, i) => (
+                        <span key={i}>{service}</span>
+                      ))}
+                    </div>
+                    <div className="info">
+                      <span className='rating'>
+                        <Image priority width={12} height={12} src="/images/home/star.svg" alt="star" /> {item.rating}
+                      </span>
+                      <span className='price'>{item.priceRange}</span>
+                      <span className='location'>{item.location}</span>
+                    </div>
                   </div>
                 </div>
-                <h2 className='slide-title'>{item.title}</h2>
-                <div className='additional-info'>
-                  <div className='service'>
-                    {item.services.map((service, i) => (
-                      <span key={i}>{service}</span>
-                    ))}
-                  </div>
-                  <div className='info'>
-                    <span className='rating'>
-                      <Image
-                        width={12}
-                        height={12}
-                        src='/images/home/star.svg'
-                        alt='star'
-                      />{' '}
-                      {item.rating}
-                    </span>
-                    <span className='price'>{item.priceRange}</span>
-                    <span className='location'>{item.location}</span>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </div>
     </div>
   );

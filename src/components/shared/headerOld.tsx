@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { Menu } from '@/icons';
 import { Button } from '@/components/ui/button';
 
@@ -12,7 +11,9 @@ import {
   SheetDescription,
   SheetClose,
 } from '@/components/ui/sheet';
+import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
+
 
 export default function Header() {
   const t = useTranslations();
@@ -21,7 +22,7 @@ export default function Header() {
   const navigation = [
     {
       href: `/${locale}/homeSection`,
-      label: 'Home',
+      label: t('home'),
     },
     {
       href: '/#explore',

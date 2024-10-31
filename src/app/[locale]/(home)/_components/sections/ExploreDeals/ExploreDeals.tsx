@@ -7,6 +7,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface SlideData {
   title: string;

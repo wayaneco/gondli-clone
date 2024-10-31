@@ -3,8 +3,10 @@
 import React from 'react';
 import './Reviews.scss';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const Reviews: React.FC = () => {
+    const t = useTranslations();
     // Define the reviews array
     const reviews = [
         {
@@ -51,18 +53,18 @@ const Reviews: React.FC = () => {
 
     return (
         <div className="reviews">
-            <h3>Reviews</h3>
+            <h3>{t('reviews')}</h3>
             {reviews.map((review, index) => (
                 <div className="block" key={index}>
                     <div className="user">
-                        <Image width={40} height={40} src={review.userImage} alt="user" />
+                        <Image priority width={40} height={40} src={review.userImage} alt="user" />
                     </div>
                     <div className="review-info">
-                        <h4>{review.name} <Image width={26} height={26} src={review.badge} alt="user" /></h4>
+                        <h4>{review.name} <Image priority width={26} height={26} src={review.badge} alt="user" /></h4>
                         <p>{review.review}</p>
                         <div className="info">
                             <span className='rating'>
-                                <Image width={12} height={12} src="/images/home/star.svg" alt="star" /> {review.rating} <span>/ 10</span>
+                                <Image priority width={12} height={12} src="/images/home/star.svg" alt="star" /> {review.rating} <span>/ 10</span>
                             </span>
                             <span className='minute'>{review.date}</span>
                         </div>

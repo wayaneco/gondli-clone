@@ -17,7 +17,7 @@ export default function FeaturesSection() {
 
   const tabs = ['wellness-enthusiast', 'service-provider'];
   const features = [
-    ['search', 'insights'],
+    [t('search'), 'insights'],
     ['stories', 'scheduling'],
     ['gamification', 'loyalty'],
     ['content', 'optimization'],

@@ -19,7 +19,12 @@
       }
     }
   }
-
+  .missedLoader{
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .swiper_container {
     height: auto !important;
     padding: 60px 0 0;
@@ -55,18 +60,14 @@
           gap: 5px;
 
           .pagination-dot {
-            width: 15px;
+            width: 33.33% !important;
             height: 3px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.3);
             transition: width 0.3s ease;
 
             &.active {
-              background: linear-gradient(
-                266.66deg,
-                #5cb170 -7.81%,
-                #d6de6d 118.14%
-              );
+              background: linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%);
             }
           }
         }
@@ -109,9 +110,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(266.66deg, #5cb170 -7.81%, #d6de6d 118.14%);
+      background: linear-gradient(266.66deg, #5CB170 -7.81%, #D6DE6D 118.14%);
       border-radius: 100px;
-      border: 1px solid #d6de6d;
+      border: 1px solid #D6DE6D;
     }
 
     .swiper-button-next:after,
@@ -125,7 +126,7 @@
       background: #f5f9ff;
 
       &::after {
-        color: #5cb170;
+        color: #5CB170;
       }
     }
   }
